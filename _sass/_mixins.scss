@@ -34,3 +34,7 @@
     flex-direction: column;
     align-items: center;
 }
+
+@mixin vert-space{
+    padding: 70px 0;
+}
