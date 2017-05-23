@@ -28,3 +28,9 @@
     -webkit-transition-delay: $delay;
     transition-delay:         $delay;
 }
+
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
