@@ -1,26 +1,7 @@
 <div class="contact">
     <div class="container">
-        <form id="emailForm" onsubmit="handleSubmit">
-            <div class="inputs">
-
-                <input id="nameField" name="name" type="text" placeholder="Name">
-                <input id="emailField" name="email" type="email" placeholder="email@address.com">
-                <input id="subjectField" name="subject" type="text" placeholder="Subject">
-            </div>
-            <textarea name="message" id="messageField" autosize=true placeholder="Message"></textarea>
-            <input type="submit">Send</input>
-        </form>
+        <h2>Contact</h2>
+        <h4>Email: <a href="mailto:t@trevorsargent.me">t@trevorsargent.me</a></h4>
+        <h4>Facebook: <a href="http://www.facebook.com/trevorsargentdesign">@trevorsargentdesign</a> </h4>
     </div>
 </div>
-
-<script>
-    document.getElementById("emailForm").onsubmit = function (event) {
-        event.preventDefault();
-        var name = document.getElementById("nameField").value;
-        var email = document.getElementById("emailField").value;
-        var subject = document.getElementById("subjectField").value;
-        var message = document.getElementById("messageField").value;
-        console.log({ name, email, subject, message })
-    }
-
-</script>
