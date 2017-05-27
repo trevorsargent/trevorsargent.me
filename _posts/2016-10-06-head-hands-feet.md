@@ -2,7 +2,7 @@
 layout: show
 title: "Head, Hands, Feet"
 subtitle: "Tales of Dismemberment"
-categories: lighting
+tags: lighting
 theatre: "Shaking The Tree"
 director: "Samantha Van Der Merwe"
 scenery: "The Architecture People"

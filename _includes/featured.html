@@ -5,7 +5,7 @@
   <div class="col featured-shadow-box">
     <a href="{{post.url}}">
       <div class="featured-item">
-        <img src="https://trevorsargent.s3.amazonaws.com/2016/Oct/HeadHandsFeet_11-1476054223561.jpg" alt="">
+        <img src="{% asset_path cover.jpg {{post.id}} %}" alt="">
         <div class="text">
           <h2>{{post.title}}</h2>
           <h3>{{post.theatre}}</h3>
