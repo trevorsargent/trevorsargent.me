@@ -1,7 +1,9 @@
 <footer class="site-footer">
     <script src="{{ " /js/Luminous.min.js " | prepend: site.baseurl }}"></script>
     <script>
-        new LuminousGallery(document.querySelectorAll('.show-gallery'));
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            new LuminousGallery(document.querySelectorAll('.show-gallery'));
+        });
     </script>
 
 </footer>

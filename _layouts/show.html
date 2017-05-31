@@ -36,10 +36,12 @@ layout: default
   </div>
     <div class="container">
   <div class="images">
-    {% for image in site.data.images %}
-    <a class="show-gallery" href="{% asset_path {{ image.file }} %}">
-      <img src="{% asset_path {{ image.file }} %}">
-    </a>
+    {% for image in site.static_files %}
+      {% if image.path contains page.slug  %}
+        <a class="show-gallery" href="{{ image.path }}">
+          <img src="{{ image.path }}">
+        </a>
+      {%endif %}
     {% endfor %}
     </div>
   </div>
