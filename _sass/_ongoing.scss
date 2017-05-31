@@ -1,0 +1,10 @@
+@import 'mixins';
+
+.ongoing{
+    @include flex;
+    @include vert-space;
+
+    .col{
+        width: 50%;
+    }
+}

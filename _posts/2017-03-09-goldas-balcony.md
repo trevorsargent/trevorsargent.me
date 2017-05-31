@@ -4,5 +4,4 @@ title: "Golda's Balcony"
 tags: lighting
 theatre: "Triangle Productions"
 director: "Don Horn"
-featured: true
 ---
