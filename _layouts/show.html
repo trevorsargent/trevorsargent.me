@@ -38,11 +38,16 @@ layout: default
   <div class="images">
     {% for image in site.static_files %}
       {% if image.path contains page.slug  %}
+        {% unless image.path contains "cover" %}
         <a class="show-gallery" href="{{ image.path }}">
           <img src="{{ image.path }}">
         </a>
+        {%endunless%}
       {%endif %}
     {% endfor %}
+    {% for num in (1...4)%}
+      <div class="gallery-fill"></div>
+    {%endfor%}
     </div>
   </div>
 </div>

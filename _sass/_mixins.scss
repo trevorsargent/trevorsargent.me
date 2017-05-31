@@ -35,6 +35,8 @@
     align-items: center;
 }
 
+$vert-space-val: 70px;
+
 @mixin vert-space{
-    padding: 70px 0;
+    padding: $vert-space-val 0;
 }
