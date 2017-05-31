@@ -1,0 +1,22 @@
+//
+@import 'colors';
+
+.cover{
+    background: url('https://trevorsargent.s3.amazonaws.com/2016/Oct/HeadHandsFeet_11-1476054223561.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    color: $light;
+
+    @include flex;
+    // justify-content: flex-end;
+
+    .text{
+        margin-top: 100px;
+    }
+
+    h2{
+        margin-left: 15px;
+    }
+}
+

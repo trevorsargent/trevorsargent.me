@@ -1,0 +1,15 @@
+@import 'mixins';
+@import 'colors';
+
+.contact{
+    @include flex;  
+    @include vert-space;  
+
+    .container{
+        flex-direction: row;    
+        justify-content: space-between;
+    }
+
+
+    
+}

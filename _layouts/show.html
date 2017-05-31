@@ -1,0 +1,53 @@
+--- 
+layout: default 
+---
+
+<div class="show">
+
+  <div class="header">
+    <div class="container">
+      <div class="text">
+        <h1>{{page.title}}</h1>
+        <h2>{{page.subtitle}}</h2>
+
+      </div>
+    </div>
+    <img src="{% asset_path cover.jpg %}" alt="">
+  </div>
+  <div class="content">
+  
+  <div class="container">
+  <div class="show-info">
+    <h3>{{page.theatre}}</h3>
+    {% if page.playwright %} <h3> By {{page.playwright}}</h3> {%endif%}
+    {% if page.director %} <h3> Directed by {{page.director}}</h3> {%endif%}
+    {% if page.scenery %} <h3> Scenic Design by {{page.scenery}}</h3> {%endif%}
+    {% if page.costumes %} <h3> Costume Design by {{page.costumes}}</h3> {%endif%}
+    {% if page.lighting %} <h3> Lighting Design by {{page.lighting}}</h3> {%endif%}
+    {% if page.sound %} <h3> Sound Design by {{page.sound}}</h3> {%endif%}
+    {% if page.projections %} <h3> Projection Design by {{page.projections}}</h3> {%endif%}    
+    </div>
+    {% comment %}<div class="tags">
+      {% for tag in page.tags%}
+        <h4>{{tag}}</h4>
+        {%endfor%}
+    </div>{% endcomment %}
+  </div>
+  </div>
+    <div class="container">
+  <div class="images">
+    {% for image in site.static_files %}
+      {% if image.path contains page.slug  %}
+        {% unless image.path contains "cover" %}
+        <a class="show-gallery" href="{{ image.path }}">
+          <img src="{{ image.path }}">
+        </a>
+        {%endunless%}
+      {%endif %}
+    {% endfor %}
+    {% for num in (1...4)%}
+      <div class="gallery-fill"></div>
+    {%endfor%}
+    </div>
+  </div>
+</div>

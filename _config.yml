@@ -1,0 +1,22 @@
+# Site settings
+title: Trevor Sargent
+email: t@trevorsargent.me
+description: > # this means to ignore newlines until "baseurl:"
+  Trevor Sargent is a Scenic, Lighting, and Projections Designer based in Portland, OR. 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://trevorsargent.me" # the base hostname & protocol for your site
+twitter_username: trevorsargent
+
+# Build settings
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+
+collections: 
+  - shows
+
+  

@@ -1,0 +1,31 @@
+@import 'mixins';
+
+nav{
+
+    @include flex;
+
+    height: 50px;
+
+    .container {
+        height: 100%;    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    a{
+        font-weight: 300;
+        color: $dark;
+
+        @include transition(color .3s);
+        @include transition('text-shadow' .3s);
+
+        &:hover{
+            border: none;
+            // font-weight: 400;
+            text-shadow: 0 0 2px $dark;
+            color: darken($dark, 100);
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import 'mixins';
+
+$height: 350px;
+
+.featured{
+    @include flex;
+    flex-direction: row;
+    background: $dark;
+    color: $light;
+    height: $height;
+    
+    .col{
+        margin: 0;
+        overflow: hidden;
+    }
+
+    a{
+        display: block;
+        color: $light;
+    }
+    
+}
+
+.featured-item{
+    // width: 100%;
+    
+    img{
+        width: 100%;  
+        height: $height+10;
+        object-position: center;
+        object-fit: cover;
+        &:hover{
+            transform: scale(1.02);
+        } 
+        margin: 0;
+    }
+
+    .text{
+        margin-top: -150px;
+        position: relative;
+        padding: 50px 30px 20px;
+        text-shadow: 0 0 3px $dark;
+        z-index: 100;
+        background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,0));
+
+
+        
+    }
+
+    
+    h2{
+        margin-bottom: 10px;
+
+    }
+
+    h3{
+        font-weight: 100;
+    }
+    
+}

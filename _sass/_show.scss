@@ -1,0 +1,75 @@
+@import 'mixins';
+@import 'colors';
+
+$height: 600px;
+
+.show{
+    @include flex;
+
+    .header{
+        @include flex;
+        width: 100%;
+        height: $height;
+        overflow: hidden;
+        background: linear-gradient(0deg, rgba(0,0,0,.5), rgba(0,0,0,0));
+    }
+
+    .content{
+        @include vert-space;
+    }
+
+    .text{
+        height: $height;
+        margin-bottom: -1 * $height;
+        @include flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        color: $light;
+        text-shadow: 0 0 5px $dark;
+        
+
+    }
+
+    $vert-image-space: 40px;
+
+    .images{
+
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        img{
+            // width: 30%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        a{
+            height: 200px;
+            width: 30%;
+            margin-bottom: $vert-image-space;
+        }
+
+        .gallery-fill{
+            width: 30%;
+            height: 0;
+        }
+
+        margin-bottom: $vert-space-val - $vert-image-space;
+    }
+
+    img{
+        width: 100%;
+        object-fit: cover;
+        height: $height;
+        object-position: center;
+        // overflow: hidden;
+        z-index: -1;
+    }
+
+    
+
+    
+}
