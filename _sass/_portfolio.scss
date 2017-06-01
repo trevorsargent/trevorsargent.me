@@ -1,0 +1,37 @@
+@import 'mixins';
+
+.portfolio, .by-tag{
+    @include flex;
+    @include vert-space;
+
+    .container{
+        flex-direction: column;
+    }
+
+    .shows{
+
+        display: flex;
+        flex-direction: column;
+
+        margin-top: $vert-space-val;
+    }
+
+    .show-item{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        .text{
+
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+
+            h3{
+                margin-left: 15px;
+            }
+        }
+    }
+
+}

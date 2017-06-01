@@ -60,6 +60,10 @@ $height: 600px;
         margin-bottom: $vert-space-val - $vert-image-space;
     }
 
+    .tags{
+        margin-top: 20px;
+    }
+
     img{
         width: 100%;
         object-fit: cover;
