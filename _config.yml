@@ -16,7 +16,4 @@ defaults:
     values:
       image: true
 
-collections: 
-  - shows
-
-  
+plugins: [asset-path-tag]
