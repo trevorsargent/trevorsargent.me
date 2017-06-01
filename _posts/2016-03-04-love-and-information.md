@@ -1,7 +1,7 @@
 ---
 layout: show
 title: "Love & Information"
-playwright: "Caryl Churchill"
+by: "Caryl Churchill"
 tags: [lighting, scenic]
 theatre: "Lewis & Clark College"
 director: "Robert Quillen Camp"

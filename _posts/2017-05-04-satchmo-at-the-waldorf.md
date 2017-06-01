@@ -1,7 +1,7 @@
 ---
 layout: show
-title: "Golda's Balcony"
-by: "William Gibson"
+title: "Satchmo at the Waldorf"
+by: "Terry Teachout"
 tags: lighting
 theatre: "Triangle Productions"
 director: "Don Horn"
