@@ -1,7 +1,7 @@
 ---
 layout: show
-title: "Golda's Balcony"
-by: "William Gibson"
+title: "Building the Wall"
+by: "Robert Schenkkan"
 tags: lighting
 theatre: "Triangle Productions"
 director: "Don Horn"
