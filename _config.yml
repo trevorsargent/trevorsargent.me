@@ -15,5 +15,3 @@ defaults:
       path: "assets/images"
     values:
       image: true
-
-plugins: [asset-path-tag]
