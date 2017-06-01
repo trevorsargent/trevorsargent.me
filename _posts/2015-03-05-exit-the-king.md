@@ -1,11 +1,10 @@
 ---
 layout: show
-title: "Love & Information"
-playwright: "Caryl Churchill"
-tags: [lighting, scenic]
+title: "Exit the King"
+playwright: "Eugene Ionesco"
+tags: [projections]
 theatre: "Lewis & Clark College"
 director: "Robert Quillen Camp"
 costumes: "Ashton Hull"
-sound: "Mark Valedez"
 featured: true
 ---

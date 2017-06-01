@@ -66,6 +66,31 @@ a{
   @include transition(color .25s);
 }
 
+.pill{
+  padding: 5px 10px;
+  background-color: $highlight;
+  color: $light;
+  line-height: 1;
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid $highlight;
+  margin: 0 3px;
+  &:last-child{
+    margin-right: 0;
+
+  }
+  
+  &:first-child{
+    margin-left: 0;
+  }
+
+
+  &:hover{
+    color: $highlight;
+    background: $light;
+  }
+}
+
 .container{
   width: 1000px;
 }

@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="by-tag">
+    <div class="container">
+        <h1>{{page.title}}</h1>
+
+        {% capture tag_shows %} {% endcapture %}
+        <div class="shows">
+        
+        
+            {% for show in site.posts %}
+                {% if show.tags contains page.tag %}
+
+                
+                <div class="show-item">
+
+                    <div class="text">
+
+                        <a href="{{show.url}}">
+                            <h2>{{show.title}}</h2>
+                        </a>
+                        <h3>{{show.theatre}}</h3>    
+                    </div>
+
+                    <div class="tags">
+                        {% for tag in show.tags %}
+                            {% unless tag == page.tag %}
+                            <a class="pill" href="{{site.url}}/{{tag}}">{{site.data.tags[tag]}}</a>
+                        {% endunless %}
+                        {%endfor%}
+                    </div>
+
+                </div>
+
+                {%endif%}
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+

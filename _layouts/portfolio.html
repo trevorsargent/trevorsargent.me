@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+
+<div class="portfolio">
+    <div class="container">
+        <h1>{{page.title}}</h1>
+
+        <div class="shows">
+        
+        
+            {% for show in site.posts %}
+
+                
+                <div class="show-item">
+
+                    <div class="text">
+
+                        <a href="{{show.url}}">
+                            <h2>{{show.title}}</h2>
+                        </a>
+                        <h3>{{show.theatre}}</h3>    
+                    </div>
+
+                    <div class="tags">
+                        {% for tag in show.tags %}
+                            <a class="pill" href="{{site.url}}/{{tag}}">{{site.data.tags[tag]}}</a>
+                        {%endfor%}
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
