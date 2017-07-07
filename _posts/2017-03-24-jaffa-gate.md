@@ -6,4 +6,5 @@ tags: [lighting, scenic]
 theatre: "Northwest Theatre Workshop"
 director: "Eric Lyness"
 sound: "Hal Logan"
+featured: true
 ---
