@@ -1,10 +1,8 @@
 @import 'mixins';
 
 .ongoing{
-    @include flex;
+    @include horz-space;
     @include vert-space;
-
-    .col{
-        width: 50%;
-    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
 }
