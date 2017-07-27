@@ -3,58 +3,39 @@
 $height: 350px;
 
 .featured{
-    @include flex;
-    flex-direction: row;
-    background: $dark;
-    color: $light;
-    height: $height;
-    
-    .col{
-        margin: 0;
-        overflow: hidden;
-    }
+  background: $dark;
+  color: $light;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: $height;
 
-    a{
-        display: block;
-        color: $light;
-    }
-    
 }
 
-.featured-item{
-    // width: 100%;
-    
-    img{
-        width: 100%;  
-        height: $height+10;
-        object-position: center;
-        object-fit: cover;
-        &:hover{
-            transform: scale(1.02);
-        } 
-        margin: 0;
-    }
+.featured-show{
 
-    .text{
-        margin-top: -150px;
-        position: relative;
-        padding: 50px 30px 20px;
-        text-shadow: 0 0 3px $dark;
-        z-index: 100;
-        background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,0));
+  display: grid;
+  grid-template-rows: 1fr 40px 40px;
 
 
-        
-    }
+  img{
+    grid-column: 1 / -1;
+    grid-row: 1 / 4;
+    object-fit: cover;
+    // &:hover{
+    //     transform: scale(1.02);
+    // }
+  }
 
-    
-    h2{
-        margin-bottom: 10px;
+  h2{
+      grid-row: 2 / auto;
+      margin-left: 15px;
+  }
 
-    }
+  h3{
+    margin-left: 15px;
 
-    h3{
-        font-weight: 100;
-    }
-    
+      font-weight: 100;
+      grid-row: 3 / auto;
+  }
+
 }
