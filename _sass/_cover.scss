@@ -4,8 +4,9 @@
     height: 600px;
     color: $light;
     display: grid;
+    width: 100%;
 
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-columns: 100px 1fr 100px;
     grid-template-rows: 100px 70px 1fr;
 
     h1{
@@ -23,7 +24,6 @@
       object-fit: cover;
       grid-column: 1 / -1;
       grid-row: 1/-1;
-
     }
 
 }
