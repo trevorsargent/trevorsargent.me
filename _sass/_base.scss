@@ -67,6 +67,7 @@ a{
 }
 
 .pill{
+  text-align: center;
   padding: 5px 10px;
   background-color: $highlight;
   color: $light;
@@ -79,7 +80,7 @@ a{
     margin-right: 0;
 
   }
-  
+
   &:first-child{
     margin-left: 0;
   }

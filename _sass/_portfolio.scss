@@ -1,37 +1,21 @@
 @import 'mixins';
 
 .portfolio, .by-tag{
-    @include flex;
+
+    @include horz-space;
     @include vert-space;
 
-    .container{
-        flex-direction: column;
+    h2, h3{
+      margin: 0;
     }
 
-    .shows{
 
-        display: flex;
-        flex-direction: column;
-
-        margin-top: $vert-space-val;
-    }
-
-    .show-item{
-
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-
-        .text{
-
-            display: flex;
-            flex-direction: row;
-            align-items: baseline;
-
-            h3{
-                margin-left: 15px;
-            }
-        }
+    .show{
+      display: grid;
+      align-items: end;
+      grid-template-columns: 2fr 3fr 120px 120px;
+      grid-column-gap: 10px;
+      grid-template-rows: 60px;
     }
 
 }
