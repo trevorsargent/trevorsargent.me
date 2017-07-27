@@ -2,26 +2,25 @@
 
 nav{
 
-  padding: 20px 100px;
+  padding: 20px $horz-space-val;
   width: 100%;
 
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
 
+  a{
+    font-weight: 300;
+    color: $dark;
 
-    a{
-        font-weight: 300;
-        color: $dark;
+    @include transition(color .3s);
+    @include transition('text-shadow' .3s);
 
-        @include transition(color .3s);
-        @include transition('text-shadow' .3s);
-
-        &:hover{
-            border: none;
-            // font-weight: 400;
-            text-shadow: 0 0 2px $dark;
-            color: darken($dark, 100);
-        }
+    &:hover{
+        border: none;
+        // font-weight: 400;
+        text-shadow: 0 0 2px $dark;
+        color: darken($dark, 100);
     }
+  }
 }

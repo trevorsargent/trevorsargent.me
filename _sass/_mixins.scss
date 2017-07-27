@@ -36,7 +36,15 @@
 }
 
 $vert-space-val: 70px;
+$horz-space-val: 150px;
 
 @mixin vert-space{
-    padding: $vert-space-val 0;
+    padding-top: $vert-space-val;
+    padding-bottom: $vert-space-val;
+
+}
+
+@mixin horz-space{
+  padding-left: $horz-space-val;
+  padding-right: $horz-space-val;
 }
