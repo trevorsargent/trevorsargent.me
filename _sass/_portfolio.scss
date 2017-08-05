@@ -2,21 +2,34 @@
 
 .portfolio, .by-tag{
 
-    @include horz-space;
-		@include vert-space;
+	@include vert-space;
+			@include horz-space;
 
     h2, h3{
 			margin: 0;
     }
 
-    .show{
-      display: grid;
-			grid-template-columns: 3fr 2fr 245px;
+    .shows{
+			display: grid;
+			grid-row-gap: 10px;
+			
+			@media(min-width: 750px){
+				grid-template-columns: 3fr 2fr;
+			}
+
+			@media(min-width: 901px){
+				grid-template-columns: 5fr 4fr auto;
+			}
 			align-items: baseline;
 			margin-bottom: 20px;
 		}
 
 		.tags{
+
+			@media(max-width: 901px){
+				display: none;
+			}
+			
 			margin-left: auto;
 			margin-top: 0;
 			display: grid;

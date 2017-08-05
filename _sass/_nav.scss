@@ -2,7 +2,10 @@
 
 nav{
 
-  padding: 20px $horz-space-val;
+	padding: 20px;
+	@include horz-space;
+
+
   width: 100%;
 
   box-sizing: border-box;

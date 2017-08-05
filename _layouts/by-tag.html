@@ -8,11 +8,11 @@ layout: default
   {% capture tag_shows %} {% endcapture %}
 
 
+  <div class="shows">
   {% for show in site.posts %}
   {% if show.tags contains page.tag %}
 
 
-  <div class="show">
 
 
   <a href="{{show.url}}">
@@ -28,10 +28,10 @@ layout: default
   {%endfor%}
 </div>
 
-  </div>
 
   {%endif%}
 
   {% endfor %}
+  </div>
 
 </div>

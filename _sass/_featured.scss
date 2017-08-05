@@ -5,10 +5,20 @@ $height: 350px;
 .featured{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: $height;
+	grid-template-rows: $height;
+	grid-auto-rows: $height;
+	
+	@media(min-width: 901px){
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	@media(max-width: 900px){
+		grid-template-columns: 1fr;
+	}
 
 }
+
+
 
 .featured-show{
 

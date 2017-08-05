@@ -3,6 +3,9 @@
 .ongoing{
     @include horz-space;
     @include vert-space;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr)
+		display: grid;
+
+		@media(min-width: 901px){
+			grid-template-columns: repeat(2, 1fr)
+		}
 }
