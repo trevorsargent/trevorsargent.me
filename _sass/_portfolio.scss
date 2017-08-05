@@ -3,19 +3,35 @@
 .portfolio, .by-tag{
 
     @include horz-space;
-    @include vert-space;
+		@include vert-space;
 
     h2, h3{
-      margin: 0;
+			margin: 0;
     }
-
 
     .show{
       display: grid;
-      align-items: end;
-      grid-template-columns: 2fr 3fr 120px 120px;
-      grid-column-gap: 10px;
-      grid-template-rows: 60px;
-    }
+			grid-template-columns: 3fr 2fr 245px;
+			align-items: baseline;
+			margin-bottom: 20px;
+		}
+
+		.tags{
+			margin-left: auto;
+			margin-top: 0;
+			display: grid;
+			grid-template-columns: 120px;
+			grid-auto-columns: 120px;
+			grid-gap: 5px;
+		}
+
+		.pill{
+			grid-row: 1
+		}
+		
+	
+
+
+
 
 }

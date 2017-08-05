@@ -20,11 +20,13 @@ layout: default
   </a>
   <h3>{{show.theatre}}</h3>
 
+<div class="tags">
   {% for tag in show.tags %}
       {% unless tag == page.tag %}
       <a class="pill" href="{{site.url}}/{{tag}}">{{site.data.tags[tag]}}</a>
   {% endunless %}
   {%endfor%}
+</div>
 
   </div>
 
