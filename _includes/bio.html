@@ -1,14 +1,4 @@
 <div class="bio">
-  <img class="headshot" src="assets/images/headshot.jpg" alt="" />
-  <p>Trevor Sargent is a Scenic, Lighting, and Projection Designer based in Portland, OR. Recent credits include
-    <a target="blank" href="http://www.nwtw.org">Northwest Theatre Workshop</a> (Jaffa Gate; Noisemaker),
-    <a target="blank" href="http://www.saltandsageproductions.com">Salt &amp; Sage Productions</a> (Meet Me in the Dark),
-    <a target="blank" href="http://www.trianglepro.org/">Triangle Productions</a> (Satchmo at the Waldorf, Building the Wall; Golda’s Balcony; Forever Dusty) and
-    <a target="blank" href="http://www.shaking-the-tree.com">Shaking The Tree Theatre</a> (Come to the Table, Mike Pence; Head, Hands, Feet)</p>
-    <p>He has also enjoyed being an Assistant Scenic and Projections Designer
-    at
-    <a target="blank" href="https://www.artistsrep.org">Artists Repertory Theater</a> (The Importance of Being Earnest, Feathers &amp; Teeth, American Hero, The Skin of Our Teeth), and as Master Electrician for
-    <a target="blank" href="http://thirdrailrep.org">Third Rail Repertory Theatre</a> (The Angry Brigade, The Nether, The Flick), <a target="blank" href="http://www.imagotheatre.com">Imago Theatre</a> (La Belle)
-    and
-    <a target="blank" href="http://petensemble.org">Portland Experimental Theatre Ensemble</a> (Procedures for Saying No)</p>
+  <img class="headshot" src="assets/images/headshot.jpg" alt="" /> {% capture bio %}{% include bio.md %}{% endcapture %}
+  {{ bio | markdownify }}
 </div>
