@@ -1,6 +1,6 @@
 ---
 layout: show
-title: "Not My Revolutioin"
+title: "Not My Revolution"
 by: "Elizabeth Huffman"
 tags: [lighting]
 theatre: "Cygnet Productions"
