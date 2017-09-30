@@ -5,7 +5,17 @@
 
 <body>
   {% include header.html %} {{ content }} {% include footer.html %}
-  
+
+  <script>
+    var links = document.links;
+
+    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+      if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+      }
+    }
+  </script>
+
 </body>
 
 </html>

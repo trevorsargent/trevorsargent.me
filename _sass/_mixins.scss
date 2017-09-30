@@ -1,3 +1,5 @@
+
+
 @mixin transition($transition...) {
     -moz-transition:    $transition;
     -o-transition:      $transition;
@@ -36,7 +38,22 @@
 }
 
 $vert-space-val: 70px;
+$horz-space-val: 150px;
+$horz-space-val-small: 70px;
 
 @mixin vert-space{
-    padding: $vert-space-val 0;
+    padding-top: $vert-space-val;
+    padding-bottom: $vert-space-val;
+
+}
+
+@mixin horz-space{
+		padding-left: $horz-space-val-small;
+  	padding-right: $horz-space-val-small;
+
+	@media(min-width: 901px){
+		padding-left: $horz-space-val;
+  	padding-right: $horz-space-val;
+	}
+  
 }
