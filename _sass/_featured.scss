@@ -5,8 +5,7 @@ $height: 350px;
 .featured{
   width: 100%;
   display: grid;
-	height: $height;
-	grid-template-rows: 1fr;
+	grid-auto-rows: $height;
 	
 	@media(min-width: 901px){
 		grid-template-columns: 1fr 1fr 1fr;
