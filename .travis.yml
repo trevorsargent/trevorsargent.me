@@ -8,7 +8,7 @@ node_js:
 #choose branch on commit of which this script should excecute
 branches:
   only:
-    - staging
+    - master
 
 before_install:
   #install rvm 2.3.3
@@ -33,16 +33,8 @@ deploy:
   skip_cleanup: true
   token:
     secure: "GMgX0xdFxDC+V2/Ea4z+wmgH89PBCQ7KHfunMtKzA1LzDUFhBCn5b7HiuzfCwVQWotpc7JRWcyBiewk0j5y7262KTgQmslCQa/VMXOqEzFN0DA5UWeZQQTCenfgGQBd+FlhMEPzXm6whD7PsY6X2EOgs2xvhygVbogz3PARVZj9pdjb9RjySqOb4JtMJb4O0pgl8rWHWySVgHb3c1+Ro1aipjChan2x5qiC1hMjOGC0Pnigbp/XFEwKfV29b9kxjjTW3BfJUBoLeHJbWzsnYn37ECVTpaZE6hqr3XoSK4u0B3UIprEAOh/mh763TMN5gD9FovnFtJbZjZODrf0tn7Hr/c78Ec24jdBUXCLLnaj9dnSL/gojZGI0wrjS/xicsPTV0t/fwqeEd064JT1s1aAVFOFKt6RazlDRJEonpEJVyBwuh3+Z5g3tAFKZgECZ9zV2wTwZavnPYy6XMkxWTNHv7mufkAb2ol2NpLICmh1n+eGloV6fcaUCszZEFXXsGcWTCTerxrm8HW+b/imPMA7GlpgH5OD+rMUdl2YnyuRX6ioXA+0lPsnkcciNVwHV9/fKXswaVDe76ek2TfeJI1qd88WtTMS5UAwZ4P4sSrAOpW7gJ/xtwH5rESab2VztvP5zf/+VeQhtdKsquFbkMO3fKRWKY4S9aRXWsh2c3A+Q="
-  project: michaelolichdesign-staging
-  message: Staged!
-  on:
-    branch: staging
-- provider: firebase
-  skip_cleanup: true
-  token:
-    secure: "GMgX0xdFxDC+V2/Ea4z+wmgH89PBCQ7KHfunMtKzA1LzDUFhBCn5b7HiuzfCwVQWotpc7JRWcyBiewk0j5y7262KTgQmslCQa/VMXOqEzFN0DA5UWeZQQTCenfgGQBd+FlhMEPzXm6whD7PsY6X2EOgs2xvhygVbogz3PARVZj9pdjb9RjySqOb4JtMJb4O0pgl8rWHWySVgHb3c1+Ro1aipjChan2x5qiC1hMjOGC0Pnigbp/XFEwKfV29b9kxjjTW3BfJUBoLeHJbWzsnYn37ECVTpaZE6hqr3XoSK4u0B3UIprEAOh/mh763TMN5gD9FovnFtJbZjZODrf0tn7Hr/c78Ec24jdBUXCLLnaj9dnSL/gojZGI0wrjS/xicsPTV0t/fwqeEd064JT1s1aAVFOFKt6RazlDRJEonpEJVyBwuh3+Z5g3tAFKZgECZ9zV2wTwZavnPYy6XMkxWTNHv7mufkAb2ol2NpLICmh1n+eGloV6fcaUCszZEFXXsGcWTCTerxrm8HW+b/imPMA7GlpgH5OD+rMUdl2YnyuRX6ioXA+0lPsnkcciNVwHV9/fKXswaVDe76ek2TfeJI1qd88WtTMS5UAwZ4P4sSrAOpW7gJ/xtwH5rESab2VztvP5zf/+VeQhtdKsquFbkMO3fKRWKY4S9aRXWsh2c3A+Q="
-  project: michaelolichdesign
-  message: LIVE!
+  project: trevor-sargent-design
+  message: Live!
   on:
     branch: master
 notifications:
