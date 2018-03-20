@@ -1,0 +1,50 @@
+#use node_js
+language: node_js
+
+#define node js version to use
+node_js:
+  - "9"
+
+#choose branch on commit of which this script should excecute
+branches:
+  only:
+    - staging
+
+before_install:
+  #install rvm 2.3.3
+  - rvm install 2.3.3
+  #use rvm 2.3.3
+  - rvm use 2.3.3
+  # - nvm install rb
+  #set home varaibles
+  # - . $HOME/.nvm/nvm.sh && nvm install 6.1 && nvm use 6.1 rb
+  #install gems through bundler
+  - gem install bundler 
+  #if gems are missing this script will get the missing gems.
+  - bundle check || bundle install 
+  
+script: echo "Testing Not Going To Happen"
+
+before_deploy:
+- jekyll build
+
+deploy:
+- provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "GMgX0xdFxDC+V2/Ea4z+wmgH89PBCQ7KHfunMtKzA1LzDUFhBCn5b7HiuzfCwVQWotpc7JRWcyBiewk0j5y7262KTgQmslCQa/VMXOqEzFN0DA5UWeZQQTCenfgGQBd+FlhMEPzXm6whD7PsY6X2EOgs2xvhygVbogz3PARVZj9pdjb9RjySqOb4JtMJb4O0pgl8rWHWySVgHb3c1+Ro1aipjChan2x5qiC1hMjOGC0Pnigbp/XFEwKfV29b9kxjjTW3BfJUBoLeHJbWzsnYn37ECVTpaZE6hqr3XoSK4u0B3UIprEAOh/mh763TMN5gD9FovnFtJbZjZODrf0tn7Hr/c78Ec24jdBUXCLLnaj9dnSL/gojZGI0wrjS/xicsPTV0t/fwqeEd064JT1s1aAVFOFKt6RazlDRJEonpEJVyBwuh3+Z5g3tAFKZgECZ9zV2wTwZavnPYy6XMkxWTNHv7mufkAb2ol2NpLICmh1n+eGloV6fcaUCszZEFXXsGcWTCTerxrm8HW+b/imPMA7GlpgH5OD+rMUdl2YnyuRX6ioXA+0lPsnkcciNVwHV9/fKXswaVDe76ek2TfeJI1qd88WtTMS5UAwZ4P4sSrAOpW7gJ/xtwH5rESab2VztvP5zf/+VeQhtdKsquFbkMO3fKRWKY4S9aRXWsh2c3A+Q="
+  project: michaelolichdesign-staging
+  message: Staged!
+  on:
+    branch: staging
+- provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "GMgX0xdFxDC+V2/Ea4z+wmgH89PBCQ7KHfunMtKzA1LzDUFhBCn5b7HiuzfCwVQWotpc7JRWcyBiewk0j5y7262KTgQmslCQa/VMXOqEzFN0DA5UWeZQQTCenfgGQBd+FlhMEPzXm6whD7PsY6X2EOgs2xvhygVbogz3PARVZj9pdjb9RjySqOb4JtMJb4O0pgl8rWHWySVgHb3c1+Ro1aipjChan2x5qiC1hMjOGC0Pnigbp/XFEwKfV29b9kxjjTW3BfJUBoLeHJbWzsnYn37ECVTpaZE6hqr3XoSK4u0B3UIprEAOh/mh763TMN5gD9FovnFtJbZjZODrf0tn7Hr/c78Ec24jdBUXCLLnaj9dnSL/gojZGI0wrjS/xicsPTV0t/fwqeEd064JT1s1aAVFOFKt6RazlDRJEonpEJVyBwuh3+Z5g3tAFKZgECZ9zV2wTwZavnPYy6XMkxWTNHv7mufkAb2ol2NpLICmh1n+eGloV6fcaUCszZEFXXsGcWTCTerxrm8HW+b/imPMA7GlpgH5OD+rMUdl2YnyuRX6ioXA+0lPsnkcciNVwHV9/fKXswaVDe76ek2TfeJI1qd88WtTMS5UAwZ4P4sSrAOpW7gJ/xtwH5rESab2VztvP5zf/+VeQhtdKsquFbkMO3fKRWKY4S9aRXWsh2c3A+Q="
+  project: michaelolichdesign
+  message: LIVE!
+  on:
+    branch: master
+notifications:
+  slack:
+    secure: JhLz/TNH7v5BgTwIMoC200jaJx+CrxRfjUc0MMYriK+wq6Ydrnx3wQUQNNIq3zu35aiAarAZyiZvkG4c1/oYwbIVvw3QiJ1zrzjwMmgmarVVF67G//qun746x/bPzSH4Cb6B8zXVA6cH/0hxaq8NnQDRYHmrLuF4dKn9/zuwH97BqRkcpyOFmcKRu22GPSpQgmAKzicU6KFaLVMusABrs6mYecqlmSqrGlSZaK5O9TGlhga9c/efhGzHy7s3RsqZJmfZA2Wv6m0HQlMZvhfTynRXQIPQFDLpFW2BOlikT6HP62mESFPNNwc1ai9NIf9dlb8Je0V+whQ7geWsuOjGknCxeajq84I8q/vClEcG/vONcyOU9oUe4qx5el7zMd3ZSqpKTSkfhhrQ2HBwQ/RnTNnXCunkkJz54FAI2h2vJdEI2RCRM6df4EPURnWw0Zavhd6dyoRjeldkhs5mi1zAR+O8gsA/LBI5vmmE8thGDOeCZ3VybGVAu4qhUjoh0isN+6PcbrMy+B8a7RLnq+P978hTjXSf70jjZWFExcuvM8B/AtI9GDRRYngikNiEgcN6CbXxk7fWW4T8Oiq0LY+htF467dIsKejdWrONvhMAw8wWJUqXDFODC64kUQhXrLtvt1FCmu+JM6WzaHHqU0+1Cfqo0aIzdAvHEzQCGXTCu7k=
