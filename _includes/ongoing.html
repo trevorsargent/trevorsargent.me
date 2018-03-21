@@ -1,13 +1,54 @@
 <div class="ongoing">
 
-	
 
-	<div>
+	<div id="open">
 		<h2>Currently Open</h2>
 	</div>
 
-	<div>
+	<div id="soon">
 		<h2>Coming Soon</h2>
 	</div>
+
+	<script>
+		const open = document.getElementById('open')
+		const soon = document.getElementById('soon')
+
+		const makeLink = (x) => {
+			let p = document.createElement('p')
+			let a = document.createElement('a')
+			p.innerText = x.theatre + ": ";
+			a.innerText = x.title
+			a.href = x.link
+			p.appendChild(a)
+			return p
+		}
+
+		let shows;
+		fetch("https://trevor-sargent-design.firebaseio.com/shows.json").then(res => {
+			res.json().then(json => {
+				shows = json
+				const now = Date.now()
+				shows.map(x => {
+					const showOpen = new Date(x.open_date)
+					const showClose = new Date(x.close_date)
+					if (showOpen > now) {
+						soon.appendChild(makeLink(x))
+					} else if (now > showOpen && now < showClose) {
+						open.appendChild(makeLink(x))
+					}
+				})
+
+				if (soon.childElementCount == 1) {
+					soon.parentNode.removeChild(soon)
+				}
+
+				if (open.childElementCount == 1) {
+					open.parentNode.removeChild(open)
+				}
+			})
+		})
+
+
+	</script>
 
 </div>
