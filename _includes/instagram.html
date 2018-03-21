@@ -1,0 +1,28 @@
+<div id="instafeed">
+
+</div>
+<script src="{{ " /js/instafeed.min.js " | prepend: site.baseurl }}"></script>
+<script>
+
+	const maxImgs = 8;
+	let numImgs = 0;
+
+	var feed = new Instafeed({
+		get: 'user',
+		userId: 167482,
+		limit: 100,
+		success: function () {
+			numImgs = 0;
+		},
+		filter: image => {
+			if (image.tags.indexOf('_') >= 0 && !(numImgs > maxImgs)) {
+				numImgs++;
+				return true;
+			}
+			return false
+		},
+		accessToken: '167482.ba4c844.ac8c753476304a76bbf90c2f299378e5',
+		resolution: 'standard_resolution'
+	});
+	feed.run();
+</script>
