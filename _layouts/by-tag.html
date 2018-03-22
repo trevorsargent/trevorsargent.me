@@ -1,5 +1,5 @@
----
-layout: default
+--- 
+layout: default 
 ---
 
 <div class="by-tag">
@@ -9,29 +9,22 @@ layout: default
 
 
   <div class="shows">
-  {% for show in site.posts %}
-  {% if show.tags contains page.tag %}
+    {% for show in site.posts %} {% if show.tags contains page.tag %}
 
 
+    <a href="{{show.url}}">
+      <h3>{{show.title}}</h3>
+    </a>
+    <h4>{{show.theatre}}</h4>
 
-
-  <a href="{{show.url}}">
-      <h2>{{show.title}}</h2>
-  </a>
-  <h3>{{show.theatre}}</h3>
-
-<div class="tags">
-  {% for tag in show.tags %}
-      {% unless tag == page.tag %}
+    <div class="tags">
+      {% for tag in show.tags %} {% unless tag == page.tag %}
       <a class="pill" href="{{site.url}}/{{tag}}">{{site.data.tags[tag]}}</a>
-  {% endunless %}
-  {%endfor%}
-</div>
+      {% endunless %} {%endfor%}
+    </div>
 
 
-  {%endif%}
-
-  {% endfor %}
+    {%endif%} {% endfor %}
   </div>
 
 </div>

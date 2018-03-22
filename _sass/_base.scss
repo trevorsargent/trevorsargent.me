@@ -69,16 +69,16 @@ a{
 .pill{
   text-align: center;
   padding: 6px 10px;
-  background-color: $highlight;
-  color: $light;
+  background-color: $light;
+	border: 1px solid $highlight;
+  color: $highlight;
   line-height: 1;
   font-size: 12px;
   border-radius: 3px;
-	border: 1px solid $highlight;
 
   &:hover{
-    color: $highlight;
-    background: $light;
+    color: $light;
+    background: $highlight;
   }
 }
 
