@@ -4,6 +4,7 @@
 .cover{
 
 	height: 500px;
+      max-height: calc(100vh - 55px);
 
 	position: relative;
 	overflow: hidden;
