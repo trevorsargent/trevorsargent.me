@@ -1,4 +1,20 @@
-<div class="bio">
-  <img class="headshot" src="assets/images/headshot.jpg" alt="" /> {% capture bio %}{% include bio.md %}{% endcapture %}
-  {{ bio | markdownify }}
+<div class="bio" id="bio">
+  <img class="headshot" src="assets/images/headshot.jpg" alt="" />
+
 </div>
+
+<script>
+
+  let bio;
+  const bioEl = document.getElementById('bio')
+  fetch("https://trevor-sargent-design.firebaseio.com/shows.json").then(res => {
+    res.json().then(json => {
+      bio = json[0]
+
+      bioEl.innerHTML = (bioEl.innerHTML + bio.text)
+      console.log(bio)
+    })
+  })
+
+
+</script>
