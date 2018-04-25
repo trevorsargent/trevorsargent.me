@@ -9,10 +9,14 @@
   const bioEl = document.getElementById('bio')
   fetch("https://trevor-sargent-design.firebaseio.com/shows.json").then(res => {
     res.json().then(json => {
-      bio = json[0]
-
-      bioEl.innerHTML = (bioEl.innerHTML + bio.text)
-      console.log(bio)
+      console.log(json)
+      let bio;
+      for (let j of json) {
+        if (j.title === "BIO") {
+          bio = j.text
+        }
+      }
+      bioEl.innerHTML = (bioEl.innerHTML + bio)
     })
   })
 
