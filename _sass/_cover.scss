@@ -3,7 +3,7 @@
 
 .cover{
 
-	height: 95vh;
+	height: calc(100vh - 50px);
 	display: grid;
 	grid-template-rows: 1fr auto 1fr auto;
 	grid-template-columns: auto 1fr auto;

@@ -49,17 +49,12 @@ p a{
 }
 
 .pill{
-  text-align: center;
-  padding: 6px 10px;
-  background-color: $light;
-	border: 1px solid $highlight;
-  color: $highlight;
-  line-height: 1;
-  font-size: 12px;
-  border-radius: 3px;
+  font-family: 'Lato', 'helvetica', sans-serif;
+  font-weight: 900;
+  @include black-highlight;
+  font-size: 16px;
 
   &:hover{
-    color: $light;
-    background: $highlight;
+  
   }
 }

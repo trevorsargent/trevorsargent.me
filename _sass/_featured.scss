@@ -7,13 +7,12 @@ $height: 33vw;
   display: grid;
 	grid-auto-rows: $height;
 	
-	@media(min-width: 901px){
+  grid-template-columns: 1fr;
+
+  @media(min-width: $med){
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
-	@media(max-width: 900px){
-		grid-template-columns: 1fr;
-	}
 
 }
 

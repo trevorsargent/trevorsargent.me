@@ -1,15 +1,14 @@
 @import 'mixins';
 @import 'colors';
 
-$height: 600px;
 
 .show{
 
-    .header{
-      position: relative;
-      width: 100%;
-      height: $height;
-      max-height: calc(100vh - 55px);
+  .header{
+    position: relative;
+    width: 100%;
+    height: $height;
+    height: calc(100vh - 55px);
 
 
       img{
