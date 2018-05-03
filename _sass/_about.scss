@@ -1,13 +1,13 @@
 @import 'mixins';
-@import 'colors';
 
-.contact{
-	text-align: center;
+.about{
+
 	@include center-col;
 	@include vert-margins;
 	@include vert-spacing;
 
-	a{
-		@include black-highlight;
+  img{
+		@include image-fix;
 	}
+	
 }

@@ -1,6 +1,6 @@
-<div class="bio" id="bio">
+<div class="about" id="about">
   <img class="headshot" src="assets/images/headshot.jpg" alt="" />
-
+  <div id="bio"></div>
 </div>
 
 <script>
@@ -9,7 +9,6 @@
   const bioEl = document.getElementById('bio')
   fetch("https://trevor-sargent-design.firebaseio.com/shows.json").then(res => {
     res.json().then(json => {
-      console.log(json)
       let bio;
       for (let j of json) {
         if (j.title === "BIO") {

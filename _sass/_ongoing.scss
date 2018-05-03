@@ -1,17 +1,9 @@
 @import 'mixins';
 
 .ongoing{
-    @include horz-space;
-    @include vert-space;
-		display: grid;
 
-		@media(min-width: 901px){
-			grid-template-columns: repeat(2, 1fr)
-		}
+	@include center-col;	
+	@include vert-margins;
+	@include vert-spacing;
 
-		@media(max-width: 900px){
-			div:first-child{
-				padding-bottom: $vert-space-val/2;
-			}
-		}
 }

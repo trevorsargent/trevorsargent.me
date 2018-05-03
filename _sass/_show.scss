@@ -4,27 +4,17 @@
 $height: 600px;
 
 .show{
-    .header{
 
+    .header{
       position: relative;
-      color: $light;
       width: 100%;
       height: $height;
       max-height: calc(100vh - 55px);
-      overflow: hidden;
-      background: linear-gradient(0deg, rgba(0,0,0,.5), rgba(0,0,0,0));
-      box-sizing: border-box;
-      @include horz-space;
-      padding-bottom: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;      
 
 
       img{
         position: absolute;
         z-index: -1;
-
         top: 0;
         left: 0;
         width: 100%;
@@ -33,46 +23,33 @@ $height: 600px;
         object-position: center;
       }
 
-      h1{
-        margin:0;
-      }
+      .header-info{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
 
-      h2{
-        padding-top: 15px;
-        margin:0;
+        h1, h2{
+          @include black-highlight;
+        }
       }
     }
 
     .show-info{
-      @include horz-space;
-      @include vert-space;
-    }
-
-    .text{
-
-        height: $height;
-        margin-bottom: -1 * $height;
-        color: $light;
-        text-shadow: 0 0 5px $dark;
+      @include center-col;
+      @include vert-margins;
     }
 
     .images{
 
-				@include horz-space;
         box-sizing: border-box;
         width: 100%;
         display: grid;
-        grid-auto-rows: 225px;
-				
-				@media(min-width: $sm){
-					grid-template-columns: repeat(3, 1fr);
-				}
+        grid-auto-rows: 33vw;
+        grid-template-columns: repeat(3, 1fr);
 
-        grid-gap: 30px;
-
-        .vertical{
-          grid-row: span 2
-        }
+        // .vertical{
+        //   grid-row: span 2
+        // }
 
         a{
           overflow: hidden;

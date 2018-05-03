@@ -1,5 +1,12 @@
-$sm: 650px;
-$med: 1000px;
+@import 'colors';
+
+$med: 650px;
+$lg: 1000px;
+
+$col-width: 450px;
+$vertical-margin: 50px;
+$vertical-spacing: 25px;
+
 
 @mixin transition($transition...) {
     -moz-transition:    $transition;
@@ -7,75 +14,29 @@ $med: 1000px;
     -webkit-transition: $transition;
     transition:         $transition;
 }
-@mixin transition-property($property...) {
-    -moz-transition-property:    $property;
-    -o-transition-property:      $property;
-    -webkit-transition-property: $property;
-    transition-property:         $property;
-}
-@mixin transition-duration($duration...) {
-    -moz-transition-property:    $duration;
-    -o-transition-property:      $duration;
-    -webkit-transition-property: $duration;
-    transition-property:         $duration;
-}
-@mixin transition-timing-function($timing...) {
-    -moz-transition-timing-function:    $timing;
-    -o-transition-timing-function:      $timing;
-    -webkit-transition-timing-function: $timing;
-    transition-timing-function:         $timing;
-}
-@mixin transition-delay($delay...) {
-    -moz-transition-delay:    $delay;
-    -o-transition-delay:      $delay;
-    -webkit-transition-delay: $delay;
-    transition-delay:         $delay;
+
+@mixin black-highlight{
+    background: $dark;
+    color: $light;
+    padding: 10px;
 }
 
-@mixin flex{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@mixin center-col{
+    width: $col-width;
+    margin: auto;
 }
 
-$vert-space-val: 70px;
-$vert-space-small-val: 35px;
-$horz-space-val: 150px;
-$horz-space-val-small: 70px;
-$horz-space-val-xs: 35px;
+@mixin vert-margins{
+    margin: $vertical-margin auto;
+}
 
-@mixin vert-space{
-    padding-top: $vert-space-small-val;
-    padding-bottom: $vert-space-small-val;
-
-    @media(min-width: $sm){
-        padding-top: $vert-space-val;
-        padding-bottom: $vert-space-val;
+@mixin vert-spacing{
+    >:not(:last-child){
+        margin-bottom: $vertical-spacing;
     }
 }
 
-@mixin vert-space-top{
-    padding-top: $vert-space-small-val;
-
-    @media(min-width: $sm){
-        padding-top: $vert-space-val;
-    }
-}
-
-@mixin horz-space{
-
-    padding-left: $horz-space-val-xs;
-    padding-right: $horz-space-val-xs;
-    
-    @media(min-width: $sm){
-    
-        padding-left: $horz-space-val-small;
-        padding-right: $horz-space-val-small;
-    }
-
-	@media(min-width: $med){
-        padding-left: $horz-space-val;
-        padding-right: $horz-space-val;
-    }
-  
+@mixin image-fix{
+    width: 100%;
+    object-fit: cover;
 }

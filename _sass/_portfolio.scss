@@ -2,30 +2,17 @@
 
 .portfolio, .by-tag{
 
-	@include vert-space-top;
-	@include horz-space;
 
 	h2, h3{
 		margin: 0;
 	}
 	
-	@media(max-width: $sm){
-		h4{
-			margin-bottom: 20px;
-		}
-	}
+
 
 	.shows{
 		display: grid;
 		grid-row-gap: 10px;
-		
-		@media(min-width: $sm){
-			grid-template-columns: 4fr 4fr;
-		}
-
-		@media(min-width: $med){
-			grid-template-columns: 5fr 5fr auto;
-		}
+	
 		
 		align-items: baseline;
 		margin-bottom: 20px;

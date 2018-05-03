@@ -1,52 +1,49 @@
----
-layout: default
+--- 
+layout: default 
 ---
 
 <div class="show">
 
   <div class="header">
-    <h1>{{page.title}}</h1>
-    {% if page.subtitle %}
+    <div class="header-info">
+      <h1>{{page.title}}</h1>
+      {% if page.subtitle %}
       <h2>{{page.subtitle}}</h2>
-    {%endif%}
+      {%endif%}
+    </div>
     <img src="/assets/posts/{{page.slug}}/cover.jpg" alt="">
   </div>
 
   <div class="show-info">
-    <h3>{{page.theatre}}</h3>
-    {% if page.by %} <h3> By {{page.by}}</h3> {%endif%}
-    {% if page.director %} <h3> Directed by {{page.director}}</h3> {%endif%}
-    {% if page.scenuc %} <h3> Scenic Design by {{page.scenic}}</h3> {%endif%}
-    {% if page.costumes %} <h3> Costume Design by {{page.costumes}}</h3> {%endif%}
-    {% if page.lighting %} <h3> Lighting Design by {{page.lighting}}</h3> {%endif%}
-    {% if page.sound %} <h3> Sound Design by {{page.sound}}</h3> {%endif%}
-    {% if page.projections %} <h3> Projection Design by {{page.projections}}</h3> {%endif%}
-    {% if page.photos %} <h3> Photo Credit to {{page.photos}}</h3> {%endif%}
+    <h4>{{page.theatre}}</h4>
+    {% if page.by %}
+    <h4> By {{page.by}}</h4> {%endif%} {% if page.director %}
+    <h4> Directed by {{page.director}}</h4> {%endif%} {% if page.scenuc %}
+    <h4> Scenic Design by {{page.scenic}}</h4> {%endif%} {% if page.costumes %}
+    <h4> Costume Design by {{page.costumes}}</h4> {%endif%} {% if page.lighting %}
+    <h4> Lighting Design by {{page.lighting}}</h4> {%endif%} {% if page.sound %}
+    <h4> Sound Design by {{page.sound}}</h4> {%endif%} {% if page.projections %}
+    <h4> Projection Design by {{page.projections}}</h4> {%endif%} {% if page.photos %}
+    <h4> Photo Credit to {{page.photos}}</h4> {%endif%}
 
     <div class="tags">
       {% for tag in page.tags %}
-        <a class="pill" href="{{site.url}}/{{tag}}">{{site.data.tags[tag]}}</a>
+      <a class="pill" href="{{site.url}}/{{tag}}">{{site.data.tags[tag]}}</a>
       {%endfor%}
     </div>
 
   </div>
 
   <div class="images">
-    {% for image in site.static_files %}
-      {% if image.path contains page.slug  %}
-        {% unless image.path contains "cover" %}
-        <a class="show-gallery" href="{{ image.path }}">
-          <img src="{{ image.path }}">
-        </a>
-        {%endunless%}
-      {%endif %}
-    {% endfor %}
+    {% for image in site.static_files %} {% if image.path contains page.slug %} {% unless image.path contains "cover" %}
+    <a class="show-gallery" href="{{ image.path }}">
+      <img src="{{ image.path }}">
+    </a>
+    {%endunless%} {%endif %} {% endfor %}
   </div>
 
 </div>
 
 <script>
-  
+
 </script>
-
-

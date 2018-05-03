@@ -1,17 +1,19 @@
 <div class="ongoing">
 
 
+	<h2 id="open-title">Currently Open</h2>
 	<div id="open">
-		<h2>Currently Open</h2>
 	</div>
 
+	<h2 id="soon-title">Coming Soon</h2>
 	<div id="soon">
-		<h2>Coming Soon</h2>
 	</div>
 
 	<script>
 		const open = document.getElementById('open')
 		const soon = document.getElementById('soon')
+		const openTitle = document.getElementById('open-title')
+		const soonTitle = document.getElementById('soon-title')
 
 		const makeLink = (x) => {
 			let p = document.createElement('p')
@@ -38,12 +40,14 @@
 					}
 				})
 
-				if (soon.childElementCount == 1) {
+				if (soon.childElementCount == 0) {
 					soon.parentNode.removeChild(soon)
+					soonTitle.parentNode.removeChild(soonTitle)
 				}
 
-				if (open.childElementCount == 1) {
+				if (open.childElementCount == 0) {
 					open.parentNode.removeChild(open)
+					openTitle.parentNode.removeChild(openTitle)
 				}
 			})
 		})
