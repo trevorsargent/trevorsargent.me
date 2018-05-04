@@ -36,13 +36,15 @@ nav{
 		color: $light;
 		display: block;
 	}
+
 	
 }
-
 .closed{
-		opacity: 0;
-		height: 0px;
-	}
+	opacity: 0;
+	height: 0vh;
+}
+
+
 
 .nav-wrap{
 	@include center-col;
