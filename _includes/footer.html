@@ -1,7 +1,13 @@
 <footer class="site-footer">
     <script src="{{ " /js/Luminous.min.js " | prepend: site.baseurl }}"></script>
+    <script src="{{ " /js/smooth-scroll.min.js " | prepend: site.baseurl }}"></script>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) { 
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 1000,
+        });
+
+        document.addEventListener("DOMContentLoaded", function (event) {
             new LuminousGallery(document.querySelectorAll('.show-gallery'));
         });
     </script>
