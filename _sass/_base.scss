@@ -7,9 +7,8 @@ body{
   font-weight: 300;
 }
 
-h1, h2, h3, h4{
-  font-family: 'Lato',  'helvetica', sans-serif;
-  font-weight: 900;
+h1, h2, h3, h4, h5{
+  @include lato;
 }
 
 h1{
@@ -25,7 +24,11 @@ h3{
 }
 
 h4{
-  font-size: 16px;
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 12px;
 }
 
 p{
@@ -49,12 +52,7 @@ p a{
 }
 
 .pill{
-  font-family: 'Lato', 'helvetica', sans-serif;
-  font-weight: 900;
+  @include lato;
   @include black-highlight;
   font-size: 16px;
-
-  &:hover{
-  
-  }
 }

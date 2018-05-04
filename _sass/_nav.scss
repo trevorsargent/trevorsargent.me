@@ -1,8 +1,7 @@
 @import 'mixins';
 
 nav{
-		font-family: 'Lato', 'helvetica', sans-serif;
-		font-weight: 900;
+		@include lato;
 		grid-column: 3 / 4;
 		grid-row: 2/ 3;
 		display: flex;

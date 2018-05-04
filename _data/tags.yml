@@ -1,5 +1,8 @@
-lighting: "Lighting"
+- slug: lighting
+  title: Lighting
 
-scenic: "Scenery"
+- slug: scenery
+  title: Scenery
 
-projections: "Projections"
+- slug: projections
+  title: Projections

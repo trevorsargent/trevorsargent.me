@@ -6,7 +6,12 @@ $lg: 1000px;
 $col-width: 450px;
 $vertical-margin: 50px;
 $vertical-spacing: 25px;
+$horizontal-margin: 50px;
 
+@mixin lato{
+    font-family: 'Lato', 'helvetica', sans-serif;
+    font-weight: 900;
+}
 
 @mixin transition($transition...) {
     -moz-transition:    $transition;
@@ -27,7 +32,13 @@ $vertical-spacing: 25px;
 }
 
 @mixin vert-margins{
-    margin: $vertical-margin auto;
+    margin-top: $vertical-margin ;
+    margin-bottom: $vertical-margin;
+}
+
+@mixin horz-margins{
+    margin-left: $horizontal-margin;
+    margin-right: $horizontal-margin;
 }
 
 @mixin vert-spacing{

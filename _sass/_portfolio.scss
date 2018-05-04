@@ -1,47 +1,85 @@
 @import 'mixins';
 
-.portfolio, .by-tag{
+.portfolio{
+	@include horz-margins;
+	@include vert-margins;
 
-
-	h2, h3{
-		margin: 0;
-	}
 	
-
-
-	.shows{
+	.show, .header-bar{
 		display: grid;
-		grid-row-gap: 10px;
+		grid-template-columns: 2fr 3fr repeat(3, 80px);
+	}
 	
-		
-		align-items: baseline;
-		margin-bottom: 20px;
+	.show{
+		opacity: 1;
+		transition: all .5s;
+		height: 50px;
+	}
+	
+	.hidden{
+		height: 0px;
+		opacity: 0;
+		overflow: hidden;
 	}
 
-	.tags{
+	.header-bar{
+		margin-bottom: 25px;
+		text-align: end;
+	}
 
-		$med-max: $med - 1;
-		@media(max-width: $med-max){
-			display: none;
+	#filter-label{
+		display: inline-block;
+		padding: 10px;
+		color: $dark;
+		transition: all .5s;
+		cursor:default;
+	}
+
+
+	span{
+		display: inline;
+		opacity: 0;
+	}
+
+	#filter-label.active{
+		color: $highlight;
+		cursor: pointer;
+		span{
+			opacity: 1;
 		}
-
-		$tag-col-width: 80px;
-		
-		margin-left: auto;
-		margin-top: 0;
-		display: grid;
-		grid-template-columns: $tag-col-width;
-		grid-auto-columns: $tag-col-width;
-		grid-gap: 5px;
 	}
 
-	.pill{
-		grid-row: 1
-	}
-		
 	
+	.table-label-wrapper{
+		text-align: center;
+	}
+	
+	.table-label{
+		@include black-highlight;
+		text-align: center;
+		display: inline-block;
+		transition: all .5s;
+	}
+
+	.selected{
+		background: $highlight;
+	}
+
+	a{
+		color: $highlight;
+	}
+
+	.tag-chip{
+		color: $dark;
+		text-align: center;
+		padding: 15px 20px;
+	}
 
 
-
+	.show-text-wrapper{
+		display: flex;
+		align-items: flex-end;
+		padding-bottom: 20px;
+	}
 
 }

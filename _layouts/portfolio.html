@@ -2,25 +2,103 @@
 layout: default 
 ---
 
-<div class="portfolio">
+<div class="cover">
+  <img src="assets/images/portfolio.jpg" alt=""> {% include nav.html %}
   <h1>{{page.title}}</h1>
+</div>
 
-  <div class="shows">
-    {% for show in site.posts %}
-
-    <a href="{{show.url}}">
-      <h3>{{show.title}}</h3>
-    </a>
-
-    <h4>{{show.theatre}}</h4>
-
-    <div class="tags">
-      {% for tag in show.tags %}
-      <a class="pill" href="{{site.url}}/{{tag}}">{{site.data.tags[tag]}}</a>
-      {%endfor%}
+<div class="portfolio">
+  <div class="header-bar">
+    <div class="fill"></div> 
+    <div>
+      <a id="filter-label" href="#_"><h5><span>Clear</span> Filter:</h5></a>
     </div>
-
-    {% endfor %}
+    <a href="#lighting" class="table-label-wrapper">
+      <h5 data-tag="lighting" class="table-label">Lighting</h5>
+    </a>
+    <a href="#scenery" class="table-label-wrapper">
+    <h5 data-tag="scenery" class="table-label">Scenery</h5>
+     </a>
+    <a href="#projections" class="table-label-wrapper">
+      <h5 data-tag="projections" class="table-label">Projections</h5>
+    </a>
   </div>
 
+  {% for show in site.posts %}
+    <div class="show {{show.tags | join: ' '}}">
+    <div class="show-text-wrapper">
+      <a href="{{show.url}}">
+        <h3>{{show.title}}</h3>
+      </a>
+    </div>
+
+    <div class="show-text-wrapper">
+      <h4>{{show.theatre}}</h4>
+    </div>
+
+      {% for tag in site.data.tags %}
+        {% if show.tags contains tag.slug %}
+        <a class="tag-chip" href="{{site.url}}/portfolio#{{tag.slug}}">√</a>
+        {% else %}
+        <div></div>
+        {% endif %}
+      {%endfor%}
+
+    </div>
+  {% endfor %}
+
 </div>
+
+<script>
+
+  const shows = document.getElementsByClassName('show');
+  const labels = document.getElementsByClassName('table-label')
+  const clear = document.querySelector("#filter-label")
+
+  const filterShows = (filter) => {
+  for(let i = 0; i < shows.length; i++){
+      if(!shows[i].classList.contains(filter)){
+        shows[i].classList.add("hidden")
+      }else{
+        shows[i].classList.remove("hidden")
+      }
+    }
+
+    for(let i = 0; i < labels.length; i++){
+      if(labels[i].dataset.tag == filter){
+        labels[i].classList.add('selected')
+      }else{
+        labels[i].classList.remove('selected')
+      }
+    }
+    
+    clear.classList.add('active')
+  }
+
+  const clearFilter = () => {
+    for(let i = 0; i < shows.length; i++){
+      shows[i].classList.remove("hidden")
+    }
+    for(let i = 0; i < labels.length; i++){
+      labels[i].classList.remove('selected')
+    }
+    clear.classList.remove("active")
+  }
+
+  const updateFilter = (x) => {
+    const hash = window.location.hash.replace("#", "")
+    const options = ["lighting", "scenery", "projections"]
+    
+    if(options.indexOf(hash) > -1){
+      filterShows(hash)
+    }else{
+      clearFilter();
+    }
+     
+  }
+
+  updateFilter();
+  window.onhashchange = updateFilter
+
+
+</script>

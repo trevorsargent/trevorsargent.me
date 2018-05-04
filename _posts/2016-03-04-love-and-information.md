@@ -2,7 +2,7 @@
 layout: show
 title: "Love & Information"
 by: "Caryl Churchill"
-tags: [lighting, scenic]
+tags: [lighting, scenery]
 theatre: "Lewis & Clark College"
 director: "Robert Quillen Camp"
 costumes: "Ashton Hull"
