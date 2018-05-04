@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'colors';
 
 nav{
 		@include lato;
@@ -6,20 +7,27 @@ nav{
 		grid-row: 2/ 3;
 		display: flex;
 		flex-direction: column;
+		margin-right: 10px;
 		
 		a{
 			@include black-highlight;
 			margin: 5px 0;
 		}
 	}
-
-#nav-burger{
+	
+	#nav-burger{
+		@include lato;
+		color: $light;
+		text-align: center;
+		padding-top: 8px;
 	position: fixed;
 	margin: 10px;
 	height: 50px;
 	width: 50px;
+	box-sizing: border-box;
 	background: $dark;
 	z-index: 100;
+	cursor: pointer;
 }
 
 #nav-flyover{
@@ -28,20 +36,27 @@ nav{
 	@include lato;
 	height: 100vh;
 	width: 100vw;
-	transition: all .25s;
+	transition-property: opacity, height;
+	transition-duration: .2s, 0s;
+	transition-delay: 0s, 0s;
 	background: transparentize($dark, .1);
 	color: $light;
+	overflow: hidden;
 	
 	a{
 		color: $light;
 		display: block;
 	}
 
+	.indent{
+		margin-left: 25px;
+	}
 	
 }
-.closed{
+#nav-flyover.closed{
 	opacity: 0;
-	height: 0vh;
+	height: 0px;
+	transition-delay: 0s, .2s;
 }
 
 
