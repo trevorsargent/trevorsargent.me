@@ -4,11 +4,33 @@
 {% include head.html %}
 
 <body>
-  {{ content }} {% include contact.html %}{% include footer.html %}
+  {% include navBurger.html %} {{ content }} {% include contact.html %}{% include footer.html %}
 
   <script>
 
+    const navBurger = document.getElementById('nav-burger')
+    const navFlyover = document.getElementById('nav-flyover')
 
+    let menuOpen = false;
+
+
+    const toggleMenu = () => {
+      menuOpen = !menuOpen;
+
+      if (menuOpen) {
+        navFlyover.classList.remove("closed")
+      } else {
+        navFlyover.classList.add("closed")
+      }
+    }
+
+    const closeMenu = () => {
+      navFlyover.classList.add("closed")
+      menuOpen = false;
+    }
+
+    navBurger.addEventListener('click', toggleMenu)
+    window.addEventListener('hashchange', closeMenu)
 
     window.addEventListener("load", function (event) {
       var links = document.links;
@@ -19,12 +41,6 @@
         }
       }
 
-      const aa = document.getElementsByClassName('show-gallery')
-      for (let i = 0; i < aa.length; i++) {
-        if (aa[i].firstElementChild.height > aa[i].firstElementChild.width) {
-          aa[i].classList.add('vertical')
-        }
-      }
     });
 
   </script>

@@ -12,3 +12,40 @@ nav{
 			margin: 5px 0;
 		}
 	}
+
+#nav-burger{
+	position: fixed;
+	margin: 10px;
+	height: 50px;
+	width: 50px;
+	background: $dark;
+	z-index: 100;
+}
+
+#nav-flyover{
+	position: fixed;
+	z-index: 75;
+	@include lato;
+	height: 100vh;
+	width: 100vw;
+	transition: all .25s;
+	background: transparentize($dark, .1);
+	color: $light;
+	
+	a{
+		color: $light;
+		display: block;
+	}
+	
+}
+
+.closed{
+		opacity: 0;
+		height: 0px;
+	}
+
+.nav-wrap{
+	@include center-col;
+	@include vert-margins;
+	@include vert-spacing;
+}
