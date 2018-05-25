@@ -62,7 +62,9 @@ nav{
 
 
 .nav-wrap{
-	@include center-col;
+  padding-top: 50px;
+  @include center-col;
+  @include horz-margins;
 	@include vert-margins;
 	@include vert-spacing;
 }
