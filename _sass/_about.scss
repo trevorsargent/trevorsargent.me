@@ -3,7 +3,9 @@
 .about{
 
 	@include center-col;
-	@include vert-margins;
+  @include vert-margins;
+  @include horz-margins;
+ 
 	@include vert-spacing;
 
   img{
