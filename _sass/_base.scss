@@ -1,14 +1,25 @@
 @import 'colors';
 @import 'mixins';
 
+:root{
+    --paralaxOffset: 0px;
+}
+
 body{
   font-family: 'Lato', 'helvetica', sans-serif;
   background: $light;
   font-weight: 400;
 }
 
+
+
 h1, h2, h3, h4, h5{
   @include lato;
+}
+
+.paralax{
+  position: relative;
+  top: var(--paralaxOffset)
 }
 
 h1{
