@@ -9,13 +9,11 @@
     width: 100%;
     height: $height;
     height: calc(100vh - 55px);
+    overflow: hidden;
 
 
       img{
-        position: absolute;
         z-index: -1;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -24,8 +22,8 @@
 
       .header-info{
         position: absolute;
-        bottom: 0px;
-        left: 0px;
+        bottom: 10px;
+        left: 10px;
 
         h1, h2{
           @include black-highlight;

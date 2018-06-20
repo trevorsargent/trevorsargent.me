@@ -11,7 +11,7 @@ layout: default
       <h2>{{page.subtitle}}</h2>
       {%endif%}
     </div>
-    <img src="/assets/posts/{{page.slug}}/cover.jpg" alt="">
+    <img class="paralax" src="/assets/posts/{{page.slug}}/cover.jpg" alt="">
   </div>
 
   <div class="show-info">
@@ -27,11 +27,9 @@ layout: default
     <h4> Photo Credit to {{page.photos}}</h4> {%endif%}
 
     <div class="tags">
-      {% for tag in site.data.tags %}
-        {% if page.tags contains tag.slug %}
-        <a class="pill" href="{{site.url}}/portfolio#{{tag.slug}}">{{tag.title}}</a>
-        {% endif %}
-      {%endfor%}
+      {% for tag in site.data.tags %} {% if page.tags contains tag.slug %}
+      <a class="pill" href="{{site.url}}/portfolio#{{tag.slug}}">{{tag.title}}</a>
+      {% endif %} {%endfor%}
     </div>
 
   </div>
