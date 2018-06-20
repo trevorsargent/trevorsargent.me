@@ -1,16 +1,14 @@
---- 
-layout: default 
----
+--- layout: default ---
 
 <div class="cover">
-  <img src="assets/images/portfolio.jpg" alt=""> {% include nav.html %}
+  <img class="paralax" src="assets/images/portfolio.jpg" alt=""> {% include nav.html %}
   <h1>{{page.title}}</h1>
 </div>
 
 <div class="portfolio">
   <div class="header-bar">
     <div id="filter-label">
-    <div></div>
+      <div></div>
       <a href="#_">
         <h5 id="clear">Clear</h5>
       </a>
@@ -31,17 +29,17 @@ layout: default
 
   {% for show in site.posts %}
   <div class="show {{show.tags | join: ' '}}">
-  <div class="show-info-wrapper">
-    <div class="show-text-wrapper">
-      <a href="{{show.url}}">
-        <h3>{{show.title}}</h3>
-      </a>
-    </div>
-    <div class="show-text-wrapper">
+    <div class="show-info-wrapper">
+      <div class="show-text-wrapper">
+        <a href="{{show.url}}">
+          <h3>{{show.title}}</h3>
+        </a>
+      </div>
+      <div class="show-text-wrapper">
 
-      <h4>{{show.theatre}}</h4>
+        <h4>{{show.theatre}}</h4>
+      </div>
     </div>
-  </div>
 
     {% for tag in site.data.tags %} {% if show.tags contains tag.slug %}
     <a class="tag-chip checked" href="{{site.url}}/portfolio#{{tag.slug}}">√</a>
