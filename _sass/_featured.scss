@@ -21,7 +21,7 @@
 
 .featured-show{
   position: relative;
-
+  overflow: hidden;
   
   img{
     top: 0;
@@ -34,6 +34,7 @@
     z-index: 1;
 		object-position: center;
     border: none;
+    @include image-scale-transition
   }
 
   .text{
@@ -53,4 +54,10 @@
   }
 
   
+}
+
+.featured-show:hover{
+  img{
+    @include image-scale
+  }
 }

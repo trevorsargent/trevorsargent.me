@@ -10,8 +10,11 @@ twitter_username: trevorsargent
 # Build settings
 markdown: kramdown
 
+permalink: :slug
+
 defaults:
   - scope:
       path: "assets/images"
     values:
       image: true
+
