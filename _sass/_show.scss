@@ -33,6 +33,11 @@
     .show-info{
       @include center-col;
       @include vert-margins;
+
+      h4{
+        margin-bottom: 3px;
+      }
+
     }
 
     .images{
