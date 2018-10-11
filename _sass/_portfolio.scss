@@ -10,7 +10,7 @@
 	.show, .header-bar{
     display: grid;
     grid-gap: 5px;
-		grid-template-columns: 1fr repeat(3, 83px);
+		grid-template-columns: 1fr repeat(4, 83px);
 	}
 	
 	.show{

@@ -1,5 +1,5 @@
---- 
-layout: default 
+---
+layout: default
 ---
 
 <div class="cover">
@@ -26,6 +26,9 @@ layout: default
     </a>
     <a href="#projections" class="table-label-wrapper">
       <h5 data-tag="projections" class="table-label">Projections</h5>
+    </a>
+    <a href="#sound" class="table-label-wrapper">
+      <h5 data-tag="sound" class="table-label">Sound</h5>
     </a>
   </div>
 
@@ -92,7 +95,7 @@ layout: default
 
   const updateFilter = (x) => {
     const hash = window.location.hash.replace("#", "")
-    const options = ["lighting", "scenery", "projections"]
+    const options = ["lighting", "scenery", "projections", "sound"]
 
     if (options.indexOf(hash) > -1) {
       filterShows(hash)
