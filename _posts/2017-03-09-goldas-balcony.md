@@ -1,9 +1,0 @@
----
-layout: show
-title: "Golda's Balcony"
-by: "William Gibson"
-tags: lighting
-theatre: "Triangle Productions"
-director: "Don Horn"
-published: false
----

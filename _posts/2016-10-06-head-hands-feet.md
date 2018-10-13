@@ -8,5 +8,6 @@ director: "Samantha Van Der Merwe"
 scenery: "The Architecture People"
 costumes: "Jenny Ampersand"
 sound: "Annelise Albright Woods"
+photos: "Gary Norman"
 featured: true
 ---
