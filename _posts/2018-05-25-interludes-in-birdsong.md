@@ -6,5 +6,5 @@ tags: [lighting]
 theatre: "Rutabaga Story Co"
 director: "Eve Johnstone"
 scenery: "Danny Gray"
-published: false
+featured: true
 ---
