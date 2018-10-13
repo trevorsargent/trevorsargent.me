@@ -2,7 +2,6 @@
 @import 'colors';
 
 .contact{
-	@include lato;
 	text-align: center;
 	@include center-col;
 	@include vert-margins;

@@ -25,7 +25,6 @@
       position: absolute;
 			width: 100%;
       height: 100%;
-      @include image-scale-transition
 		}
 
 		h4{
@@ -40,10 +39,4 @@
 			padding-bottom: 5px;
 		}
 	}
-}
-
-a:hover{
-  img{
-    @include image-scale
-  }
 }

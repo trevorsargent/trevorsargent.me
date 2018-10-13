@@ -2,69 +2,39 @@
 @import 'colors';
 
 nav{
-		@include lato;
-		grid-column: 3 / 4;
-		grid-row: 2/ 3;
-		display: flex;
-		flex-direction: column;
-		margin-right: 10px;
-		
-		a{
-			@include black-highlight;
-			margin: 5px 0;
-		}
-	}
-	
-	#nav-burger{
-		@include lato;
-		color: $light;
-		text-align: center;
-		padding-top: 8px;
-	position: fixed;
-	margin: 10px;
-	height: 50px;
-	width: 50px;
-	box-sizing: border-box;
-	background: $dark;
-	z-index: 100;
-	cursor: pointer;
-}
-
-#nav-flyover{
-	position: fixed;
-	z-index: 75;
-	@include lato;
-	height: 100vh;
-	width: 100vw;
-	transition-property: opacity, height;
-	transition-duration: .2s, 0s;
-	transition-delay: 0s, 0s;
-	background: transparentize($dark, .1);
-	color: $light;
-	overflow: hidden;
-	
-	a{
-		color: $light;
-		display: block;
-	}
-
-	.indent{
-		margin-left: 25px;
-	}
-	
-}
-#nav-flyover.closed{
-	opacity: 0;
-	height: 0px;
-	transition-delay: 0s, .2s;
-}
-
-
-
-.nav-wrap{
-  padding-top: 50px;
-  @include center-col;
+  position: relative;
+  height: 50px;
+  top: -35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $highlight;
   @include horz-margins;
-	@include vert-margins;
-	@include vert-spacing;
+  @include transition(all .25s)
 }
+
+nav:hover{
+  top: 0;
+}
+
+nav .show {
+  top: 0;
+}
+
+#nav-links{
+  letter-spacing: 1px;
+  @include header-font;
+  font-weight: 200;
+  @include center-col;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $light;
+}
+

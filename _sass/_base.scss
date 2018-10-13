@@ -6,65 +6,40 @@
 }
 
 body{
-  font-family: 'Lato', 'helvetica', sans-serif;
+  font-family: 'Open Sans', 'helvetica', sans-serif;
   background: $light;
   font-weight: 400;
 }
 
+.content {
+  @include nav-margin-fix;
+  @include horz-margins;
+}
 
 
 h1, h2, h3, h4, h5{
-  @include lato;
-}
-
-.paralax{
-  position: relative;
-  top: var(--paralaxOffset)
-}
-
-h1{
-  font-size: 42px;
-}
-
-h2{
-  font-size: 32px;
-}
-
-h3{
-  font-size: 24px;
-}
-
-h4{
-  font-size: 14px;
-}
-
-h5 {
-  font-size: 12px;
-}
-
-p{
-  font-size: 15px;
-	line-height: 1.5;
-	margin-bottom: 5px;
+  @include header-font;
 }
 
 a{
   text-decoration: none;
+  color: inherit;
 }
 
-p a{
+.headline, .title {
+  font-weight: 900;
+  font-size: 160px;
+  text-transform: uppercase;
+  margin-bottom: -10px;
+  margin-top: -10px;
+}
+
+.title{
   color: $highlight;
-  padding: 1px 3px;
-
-  &:hover{
-    color: $light;
-    background: $highlight;
-  }
-  @include transition(background-color .25s);
 }
 
-.pill{
-  @include lato;
-  @include black-highlight;
-  font-size: 16px;
+.headline{
+  a:hover {
+    color: $highlight;
+  }
 }

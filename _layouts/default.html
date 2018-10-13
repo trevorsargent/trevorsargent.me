@@ -1,86 +1,84 @@
 <!DOCTYPE html>
 <html>
 
-{% include head.html %}
+  {% include head.html %}
 
-<body>
-	{% include navBurger.html %} {{ content }} {% include contact.html %} {% include footer.html %}
+  <body>
+    {% include nav.html %} {{ content }} {% include footer.html %}
 
-	<script>
+    <script>
 
-		const navBurger = document.getElementById('nav-burger')
-		const navFlyover = document.getElementById('nav-flyover')
+      const navBurger = document.getElementById('nav-burger')
+      const navFlyover = document.getElementById('nav-flyover')
 
-		let menuOpen = false;
+      let menuOpen = false;
 
+      const toggleMenu = () => {
+        menuOpen = !menuOpen;
 
-		const toggleMenu = () => {
-			menuOpen = !menuOpen;
+        if (menuOpen) {
+          navFlyover.classList.remove("closed")
+        } else {
+          navFlyover.classList.add("closed")
+        }
+      }
 
-			if (menuOpen) {
-				navFlyover.classList.remove("closed")
-			} else {
-				navFlyover.classList.add("closed")
-			}
-		}
+      const closeMenu = () => {
+        navFlyover.classList.add("closed")
+        menuOpen = false;
+      }
 
-		const closeMenu = () => {
-			navFlyover.classList.add("closed")
-			menuOpen = false;
-		}
+      navBurger.addEventListener('click', toggleMenu)
+      window.addEventListener('hashchange', closeMenu)
+      navFlyover.addEventListener('click', closeMenu)
 
-		navBurger.addEventListener('click', toggleMenu)
-		window.addEventListener('hashchange', closeMenu)
-		navFlyover.addEventListener('click', closeMenu)
+      document.onkeydown = function (evt) {
+        evt = evt || window.event;
+        var isEscape = false;
+        if ("key" in evt) {
+          isEscape = (evt.key == "Escape" || evt.key == "Esc");
+        } else {
+          isEscape = (evt.keyCode == 27);
+        }
+        if (isEscape) {
+          closeMenu();
+        }
+      };
 
-		document.onkeydown = function (evt) {
-			evt = evt || window.event;
-			var isEscape = false;
-			if ("key" in evt) {
-				isEscape = (evt.key == "Escape" || evt.key == "Esc");
-			} else {
-				isEscape = (evt.keyCode == 27);
-			}
-			if (isEscape) {
-				closeMenu();
-			}
-		};
+      window.addEventListener("load", function (event) {
+        var links = document.links;
 
-		window.addEventListener("load", function (event) {
-			var links = document.links;
+        for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+          if (links[i].hostname != window.location.hostname) {
+            links[i].target = '_blank';
+          }
+        }
 
-			for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-				if (links[i].hostname != window.location.hostname) {
-					links[i].target = '_blank';
-				}
-			}
+      });
 
-		});
+      // var lastKnownScroll = 0, ticking = false;
+      // function onScroll() {
+      //   lastKnownScroll = window.scrollY
+      //   requestTick();
+      // }
 
+      // function requestTick() {
+      //   if (!ticking) {
+      //     requestAnimationFrame(updateParalax);
+      //   }
+      //   ticking = true;
+      // }
 
-		var lastKnownScroll = 0, ticking = false;
-		function onScroll() {
-			lastKnownScroll = window.scrollY
-			requestTick();
-		}
+      // function updateParalax() {
+      //   ticking = false;
+      //   document.documentElement.style.setProperty('--paralaxOffset', (lastKnownScroll / 3) + 'px')
 
-		function requestTick() {
-			if (!ticking) {
-				requestAnimationFrame(updateParalax);
-			}
-			ticking = true;
-		}
+      // }
 
-		function updateParalax() {
-			ticking = false;
-			document.documentElement.style.setProperty('--paralaxOffset', (lastKnownScroll / 3) + 'px')
+      // window.addEventListener('scroll', onScroll, false);
 
-		}
+    </script>
 
-		window.addEventListener('scroll', onScroll, false);
-
-	</script>
-
-</body>
+  </body>
 
 </html>

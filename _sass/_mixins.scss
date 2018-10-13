@@ -7,12 +7,15 @@ $col-width: 450px;
 $vertical-margin: 50px;
 $vertical-margin-sm: 25px;
 $vertical-spacing: 25px;
-$horizontal-margin: 50px;
+$horizontal-margin: 25px;
 $horizontal-margin-sm: 25px;
 
-@mixin lato{
-    font-family: 'Lato', 'helvetica', sans-serif;
-    font-weight: 900;
+@mixin nav-margin-fix{
+  margin-top: -20px;
+}
+
+@mixin header-font{
+  font-family: 'Source Sans Pro'
 }
 
 @mixin transition($transition...) {
@@ -62,10 +65,6 @@ $horizontal-margin-sm: 25px;
     object-fit: cover;
 }
 
-@mixin image-scale {
-  transform: scale(1.05)
-}
-
-@mixin image-scale-transition {
-  transition: all .25s
+@mixin title-space{
+  margin-bottom: 30px;
 }
