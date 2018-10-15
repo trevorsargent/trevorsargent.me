@@ -1,0 +1,55 @@
+.filter-bar{
+  @include block-text;
+  @include horz-margins;
+  height: 50px;
+  background: $dark;
+  display: flex;
+  flex: row;
+  color: $light;
+  overflow: hidden;
+  
+  a:first-child{
+    width: 50px;
+    background: $highlight;
+  }
+
+  a:not(:first-child){
+    flex: 1;
+
+  }
+
+  a > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0px solid $highlight;
+    @include transition(all .25s);
+
+   
+
+    &:hover{
+      border: 5px solid $highlight;
+    }
+  }
+  
+  a{
+    @include transition(all .25s);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.hide{
+    width: 0px;
+    overflow: hidden;
+  }
+
+  .selected{
+    background: $highlight;
+  }
+
+}

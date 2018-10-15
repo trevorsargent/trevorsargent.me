@@ -1,0 +1,72 @@
+<div class="filter-bar">
+
+  <a id="filter-clear" href="#_">
+    x
+  </a>
+  <a href="#lighting">
+    <div data-tag="lighting" class="filter-option">Lighting</div>
+  </a>
+  <a href="#scenery">
+    <div data-tag="scenery" class="filter-option">Scenery</div>
+  </a>
+  <a href="#projections">
+    <div data-tag="projections" class="filter-option">Projections</div>
+  </a>
+  <a href="#sound">
+    <div data-tag="sound" class="filter-option">Sound</div>
+  </a>
+</div>
+
+<script>
+
+  const shows = document.getElementsByClassName('show');
+  const options = document.getElementsByClassName('filter-option')
+  const clear = document.querySelector("#filter-clear")
+
+  const filterShows = (filter) => {
+    for (let i = 0; i < shows.length; i++) {
+      if (!shows[i].classList.contains(filter)) {
+        shows[i].classList.add("hidden")
+      } else {
+        shows[i].classList.remove("hidden")
+      }
+    }
+
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].dataset.tag == filter) {
+        options[i].classList.add('selected')
+      } else {
+        options[i].classList.remove('selected')
+      }
+    }
+
+    clear.classList.remove('hide')
+  }
+
+  const clearFilter = () => {
+    for (let i = 0; i < shows.length; i++) {
+      shows[i].classList.remove("hidden")
+    }
+    for (let i = 0; i < options.length; i++) {
+      options[i].classList.remove('selected')
+    }
+    clear.classList.add("hide")
+  }
+
+  const updateFilter = (x) => {
+    const hash = window.location.hash.replace("#", "")
+    const options = ["lighting", "scenery", "projections", "sound"]
+
+    if (options.indexOf(hash) > -1) {
+      filterShows(hash)
+    } else {
+      clearFilter();
+    }
+
+  }
+
+  updateFilter();
+  window.addEventListener("hashchange", updateFilter)
+
+
+</script>
