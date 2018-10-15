@@ -10,13 +10,37 @@ $vertical-spacing: 25px;
 $horizontal-margin: 25px;
 $horizontal-margin-sm: 25px;
 
+@mixin block-text{
+  font-family: 'Source Sans Pro';
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+@mixin jumbo-text{
+  font-size: 150px;
+  @include block-text;
+}
+
+@mixin highlight{
+  &{
+    color: $highlight;
+  }
+}
+
+@mixin hover-dark{
+  &{
+    @include transition(color .25s)
+  }
+  &:hover{
+    color: $dark;
+  }
+}
+
 @mixin nav-margin-fix{
   margin-top: -20px;
 }
 
-@mixin header-font{
-  font-family: 'Source Sans Pro'
-}
+
 
 @mixin transition($transition...) {
     -moz-transition:    $transition;

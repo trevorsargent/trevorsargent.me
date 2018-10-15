@@ -11,16 +11,6 @@ body{
   font-weight: 400;
 }
 
-.content {
-  @include nav-margin-fix;
-  @include horz-margins;
-}
-
-
-h1, h2, h3, h4, h5{
-  @include header-font;
-}
-
 a{
   text-decoration: none;
   color: inherit;

@@ -2,39 +2,29 @@
 @import 'colors';
 
 nav{
-  position: relative;
-  height: 50px;
-  top: -35px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   background: $highlight;
   @include horz-margins;
-  @include transition(all .25s)
+  @include transition(max-height .25s);
+  padding-bottom: 10px;
+  margin-bottom: $vertical-spacing;
+  overflow: hidden;
+  max-height: 1000px;
+
+  .links{
+    opacity: 1;
+    @include transition(opacity .25s);
+    a, h1{
+      margin-right: 25px;
+      color: $light;
+      @include jumbo-text;
+      @include hover-dark;
+    }
+  }
 }
 
-nav:hover{
-  top: 0;
+nav:not(:hover){
+  max-height:25px;
+  .links{
+    opacity: 0;
+  }
 }
-
-nav .show {
-  top: 0;
-}
-
-#nav-links{
-  letter-spacing: 1px;
-  @include header-font;
-  font-weight: 200;
-  @include center-col;
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-nav a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $light;
-}
-
