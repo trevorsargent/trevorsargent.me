@@ -5,12 +5,13 @@ nav{
   background: $highlight;
   @include horz-margins;
   @include transition(max-height .25s);
+  box-sizing: border-box;
   padding-bottom: 10px;
-  margin-bottom: $vertical-spacing;
   overflow: hidden;
   max-height: 1000px;
 
   .links{
+    margin: 0;
     opacity: 1;
     @include transition(opacity .25s);
     a, h1{

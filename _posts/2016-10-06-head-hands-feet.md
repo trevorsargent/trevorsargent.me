@@ -1,6 +1,6 @@
 ---
 layout: show
-title: "Head, Hands, Feet"
+title: "Head. Hands. Feet"
 subtitle: "Tales of Dismemberment"
 tags: [lighting]
 theatre: "Shaking The Tree Theatre"

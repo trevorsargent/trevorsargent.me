@@ -7,44 +7,6 @@
     {% include nav.html %} {{ content }} {% include footer.html %}
 
     <script>
-
-      const navBurger = document.getElementById('nav-burger')
-      const navFlyover = document.getElementById('nav-flyover')
-
-      let menuOpen = false;
-
-      const toggleMenu = () => {
-        menuOpen = !menuOpen;
-
-        if (menuOpen) {
-          navFlyover.classList.remove("closed")
-        } else {
-          navFlyover.classList.add("closed")
-        }
-      }
-
-      const closeMenu = () => {
-        navFlyover.classList.add("closed")
-        menuOpen = false;
-      }
-
-      navBurger.addEventListener('click', toggleMenu)
-      window.addEventListener('hashchange', closeMenu)
-      navFlyover.addEventListener('click', closeMenu)
-
-      document.onkeydown = function (evt) {
-        evt = evt || window.event;
-        var isEscape = false;
-        if ("key" in evt) {
-          isEscape = (evt.key == "Escape" || evt.key == "Esc");
-        } else {
-          isEscape = (evt.keyCode == 27);
-        }
-        if (isEscape) {
-          closeMenu();
-        }
-      };
-
       window.addEventListener("load", function (event) {
         var links = document.links;
 

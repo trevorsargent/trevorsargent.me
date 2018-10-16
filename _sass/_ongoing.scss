@@ -1,10 +1,20 @@
 @import 'mixins';
+@import 'colors';
 
 .ongoing{
 
-	@include center-col;	
-	@include vert-margins;
+  @include block-text;
+  @include vert-margins;
   @include vert-spacing;
   @include horz-margins;
+
+  a{
+    color: $highlight;
+  }
+  
+  h1{
+    @include jumbo-text;
+    color: $highlight;
+  }
 
 }

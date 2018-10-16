@@ -1,58 +1,45 @@
-<div class="ongoing">
+<script>
+  const open = document.getElementById('open')
+  const soon = document.getElementById('soon')
+  const openTitle = document.getElementById('open-title')
+  const soonTitle = document.getElementById('soon-title')
+
+  const makeLink = (x) => {
+    let p = document.createElement('p')
+    let a = document.createElement('a')
+    p.innerText = x.theatre + ": ";
+    a.innerText = x.title
+    a.href = x.link
+    p.appendChild(a)
+    return p
+  }
+
+  let shows;
+  fetch("https://trevor-sargent-design.firebaseio.com/shows.json").then(res => {
+    res.json().then(json => {
+      shows = json
+      const now = Date.now()
+      shows.map(x => {
+        const showOpen = new Date(x.open_date)
+        const showClose = new Date(x.close_date)
+        if (showOpen > now) {
+          soon.appendChild(makeLink(x))
+        } else if (now > showOpen && now < showClose) {
+          open.appendChild(makeLink(x))
+        }
+      })
+
+      if (soon.childElementCount == 0) {
+        soon.parentNode.removeChild(soon)
+        soonTitle.parentNode.removeChild(soonTitle)
+      }
+
+      if (open.childElementCount == 0) {
+        open.parentNode.removeChild(open)
+        openTitle.parentNode.removeChild(openTitle)
+      }
+    })
+  })
 
 
-	<h2 id="open-title">Currently Open</h2>
-	<div id="open">
-	</div>
-
-	<h2 id="soon-title">Coming Soon</h2>
-	<div id="soon">
-	</div>
-
-	<script>
-		const open = document.getElementById('open')
-		const soon = document.getElementById('soon')
-		const openTitle = document.getElementById('open-title')
-		const soonTitle = document.getElementById('soon-title')
-
-		const makeLink = (x) => {
-			let p = document.createElement('p')
-			let a = document.createElement('a')
-			p.innerText = x.theatre + ": ";
-			a.innerText = x.title
-			a.href = x.link
-			p.appendChild(a)
-			return p
-		}
-
-		let shows;
-		fetch("https://trevor-sargent-design.firebaseio.com/shows.json").then(res => {
-			res.json().then(json => {
-				shows = json
-				const now = Date.now()
-				shows.map(x => {
-					const showOpen = new Date(x.open_date)
-					const showClose = new Date(x.close_date)
-					if (showOpen > now) {
-						soon.appendChild(makeLink(x))
-					} else if (now > showOpen && now < showClose) {
-						open.appendChild(makeLink(x))
-					}
-				})
-
-				if (soon.childElementCount == 0) {
-					soon.parentNode.removeChild(soon)
-					soonTitle.parentNode.removeChild(soonTitle)
-				}
-
-				if (open.childElementCount == 0) {
-					open.parentNode.removeChild(open)
-					openTitle.parentNode.removeChild(openTitle)
-				}
-			})
-		})
-
-
-	</script>
-
-</div>
+</script>

@@ -6,6 +6,8 @@
 .cover{
   h1, .nav-link{
     @include jumbo-text;
+    @include horz-margins;
+  
   }
 
   a{
@@ -13,6 +15,4 @@
     @include highlight; 
     @include hover-dark;
   }
-
-  
 }

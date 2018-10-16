@@ -1,42 +1,61 @@
----
-layout: default
+--- 
+layout: default 
 ---
 
-<div class="show">
+<div class="show-page">
 
-  <div class="header">
-    <div class="header-info">
-      <h1>{{page.title}}</h1>
-      {% if page.subtitle %}
-      <h2>{{page.subtitle}}</h2>
-      {%endif%}
-    </div>
-    <img class="paralax" src="/assets/posts/{{page.slug}}/cover.jpg" alt="">
+  <div class="show-title">
+    <h1>{{page.title}}</h1>
+    {% if page.subtitle %}
+    <h2>{{page.subtitle}}</h2>
+    {%endif%}
   </div>
+  <img class="cover-image" src="/assets/posts/{{page.slug}}/cover.jpg" alt="">
 
   <div class="show-info">
-    <h4>{{page.theatre}}</h4>
-    {% if page.by %} <h4> By {{page.by}}</h4> {%endif%}
-    {% if page.director %} <h4> Directed by {{page.director}}</h4> {%endif%}
-    {% if page.choreographer %} <h4> Choreography by {{page.choreographer}}</h4> {%endif%}
-    {% if page.scenic %} <h4> Scenic Design by {{page.scenic}}</h4> {%endif%}
-    {% if page.costumes %} <h4> Costume Design by {{page.costumes}}</h4> {%endif%}
-    {% if page.lighting %} <h4> Lighting Design by {{page.lighting}}</h4> {%endif%}
-    {% if page.sound %} <h4> Sound Design by {{page.sound}}</h4> {%endif%}
-    {% if page.projections %} <h4> Projection Design by {{page.projections}}</h4> {%endif%}
-    {% if page.photos %} <h4> Photo Credit to {{page.photos}}</h4> {%endif%}
-
-    <div class="tags">
-      {% for tag in site.data.tags %} {% if page.tags contains tag.slug %}
-      <a class="pill" href="{{site.url}}/portfolio#{{tag.slug}}">{{tag.title}}</a>
-      {% endif %} {%endfor%}
-    </div>
+  <div class="credits">
+  
+    <h4><span>{{page.theatre}}</span></h4>
+    {% if page.by %}
+    <h4> By
+      <span>{{page.by}}</span>
+    </h4> {%endif%} {% if page.director %}
+    <h4> Directed by
+      <span>{{page.director}}</span>
+    </h4> {%endif%} {% if page.choreographer %}
+    <h4> Choreography by
+      <span>{{page.choreographer}}</span>
+    </h4> {%endif%} {% if page.scenic %}
+    <h4> Scenic Design by
+      <span>{{page.scenic}}</span>
+    </h4> {%endif%} {% if page.costumes %}
+    <h4> Costume Design by
+      <span>{{page.costumes}}</span>
+    </h4> {%endif%} {% if page.lighting %}
+    <h4> Lighting Design by
+      <span>{{page.lighting}}</span>
+    </h4> {%endif%} {% if page.sound %}
+    <h4> Sound Design by
+      <span>{{page.sound}}</span>
+    </h4> {%endif%} {% if page.projections %}
+    <h4> Projection Design by
+      <span>{{page.projections}}</span>
+    </h4> {%endif%} {% if page.photos %}
+    <h4> Photos by
+      <span>{{page.photos}}</span>
+    </h4> {%endif%}
 
   </div>
+  <div class="tags">
+    {% for tag in site.data.tags %} {% if page.tags contains tag.slug %}
+    <a class="tag" href="{{site.url}}/portfolio#{{tag.slug}}">{{tag.title}}</a>
+    {% endif %} {%endfor%}
+  </div>
+  </div>
+
 
   <div class="images">
-    {% for image in site.static_files %} {% if image.path contains page.slug %} {% unless image.path contains "cover"
-    %}
+    {% for image in site.static_files %} {% if image.path contains page.slug %} {% unless image.path contains "cover" %}
     <a class="show-gallery" href="{{ image.path }}">
       <img src="{{ image.path }}">
     </a>
@@ -46,5 +65,19 @@ layout: default
 </div>
 
 <script>
+  window.addEventListener("load", function (event) {
+    var images = document.getElementsByClassName('show-gallery');
+    for(var i = 0; i < images.length; i++){
+      if(!images[i].hasChildNodes()){
+        return;
+      }
 
+      var img = images[i].childNodes[1];
+      if(img.naturalWidth > img.naturalHeight){
+        images[i].classList.add('landscape');
+      }else{
+        images[i].classList.add('portrait');
+      }
+    }      
+  });
 </script>

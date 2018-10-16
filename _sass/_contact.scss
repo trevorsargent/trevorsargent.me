@@ -3,11 +3,6 @@
 
 .contact{
 	text-align: center;
-	@include center-col;
 	@include vert-margins;
 	@include vert-spacing;
-
-	a{
-		@include black-highlight;
-	}
 }

@@ -1,70 +1,74 @@
 @import 'mixins';
 @import 'colors';
 
+.show-page{
+  @include horz-margins;
 
-.show{
+  .show-title{
+    color: $highlight;
+    @include vert-margins;
+  }
 
-  .header{
-    position: relative;
+  h1{
+    @include jumbo-text;
+  }
+
+  h2{
+    @include block-text;
+    font-size: 50px;
+    margin-left: 6px;
+  }
+
+  .cover-image{
     width: 100%;
-    height: calc(100vh - 55px);
-    overflow: hidden;
+    height: 600px;
+    object-fit: cover;
+  }
 
+  .show-info{
+    @include vert-margins;
+    @include block-text;
+    font-size: 30px;
+  }
 
+  .credits{
+    span{
+      color: $highlight;
+    }
+  }
+
+  .tags{
+    margin-top: 10px;
+    color: $highlight;
+  }
+  
+  .tag{
+    margin-right: 3px;
+  }
+
+  .images{
+    @include vert-margins;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    grid-auto-rows: 400px;
+
+    a{
+      height: 100%;
+      width: 100%;
+   
       img{
-        z-index: -1;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
       }
-
-      .header-info{
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-
-        h1, h2{
-          @include black-highlight;
-        }
-      }
+      
     }
 
-    .show-info{
-      @include center-col;
-      @include vert-margins;
-
-      h4{
-        margin-bottom: 3px;
-      }
-
+    .portrait{
+      grid-row: span 2;
     }
 
-    .images{
-
-        box-sizing: border-box;
-        width: 100%;
-        display: grid;
-        grid-auto-rows: 33vw;
-        grid-template-columns: repeat(3, 1fr);
-
-        // .vertical{
-        //   grid-row: span 2
-        // }
-
-        a{
-          overflow: hidden;
-        }
-
-        img{
-          object-position: center;
-            object-fit: cover;
-            width: 100%;
-            min-height: 100%;
-        }
-    }
-
-    .tags{
-        margin-top: 20px;
-    }
+  }
 }
