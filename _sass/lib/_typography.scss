@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'util';
+
+@mixin text-jumbo{
+  @include heavy-caps;
+  font-size: $text-jumbo;
+}
+
+@mixin text-block{  
+  @include heavy-caps;
+  font-size: $text-block;
+}
+
+@mixin highlight{
+  color: $highlight;
+}
+
+@mixin hover-dark{
+  @include transition(all $transition-time);
+  &:hover{
+    color: $dark;
+  }
+}

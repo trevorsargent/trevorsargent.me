@@ -1,5 +1,5 @@
 .filter-bar{
-  @include block-text;
+  @include text-block;
   @include horz-margins;
   height: 50px;
   background: $dark;

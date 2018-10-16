@@ -1,0 +1,12 @@
+@mixin heavy-caps{
+  font-family: 'Source Sans Pro';
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}

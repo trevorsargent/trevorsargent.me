@@ -1,12 +1,10 @@
-@import 'mixins';
-
 .about{
 
   @include vert-margins;
   @include horz-margins;
  
   img{
-		@include image-fix;
+		@include image-cover;
 	}
 	
 }

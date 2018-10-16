@@ -1,14 +1,16 @@
 --- 
 ---
 
-@import "reset" ;
-@import "base";
-@import "cover";
-@import "nav";
-@import "about";
-@import 'contact';
-@import 'ongoing';
-@import 'show';
-@import 'portfolio';
-@import 'filter';
-@import 'instagram';
+@import 'lib/reset';
+@import 'lib/base';
+
+//pages
+@import 'pages/cover';
+@import 'pages/portfolio';
+@import 'pages/show';
+@import 'pages/about';
+@import 'pages/ongoing';
+@import 'pages/contact';
+
+//components
+@import 'components/nav';

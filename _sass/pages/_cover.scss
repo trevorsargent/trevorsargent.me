@@ -1,18 +1,13 @@
-@import 'colors';
-@import 'mixins';
-
-
-
 .cover{
   h1, .nav-link{
-    @include jumbo-text;
+    @include text-jumbo;
     @include horz-margins;
   
   }
 
   a{
     display: block;
-    @include highlight; 
+    @include highlight;
     @include hover-dark;
   }
 }

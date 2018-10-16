@@ -1,6 +1,3 @@
-@import 'mixins';
-@import 'colors';
-
 .show-page{
   @include horz-margins;
 
@@ -10,11 +7,11 @@
   }
 
   h1{
-    @include jumbo-text;
+    @include text-jumbo;
   }
 
   h2{
-    @include block-text;
+    @include text-block;
     font-size: 50px;
     margin-left: 6px;
   }
@@ -27,7 +24,7 @@
 
   .show-info{
     @include vert-margins;
-    @include block-text;
+    @include text-block;
     font-size: 30px;
   }
 

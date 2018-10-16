@@ -1,11 +1,9 @@
-@import 'mixins';
-
 .portfolio{
   @include horz-margins;
   
   .title{
     @include vert-margins;
-    @include jumbo-text;
+    @include text-jumbo;
   }
   
 	.header-bar{
@@ -31,7 +29,7 @@
   
   .text{
     @include transition(all .25s);
-    @include block-text;
+    @include text-block;
     border: 0px solid $highlight;
     opacity: 0;
     box-sizing: border-box;
