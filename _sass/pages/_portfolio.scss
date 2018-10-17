@@ -1,30 +1,23 @@
+@import '../components/filter';
+
 .portfolio{
   @include horz-margins;
   
   .title{
     @include vert-margins;
     @include text-jumbo;
+    @include highlight;
   }
-  
-	.header-bar{
-    display: grid;
-    grid-gap: 5px;
-		grid-template-columns: repeat(5, 1fr);
-	}
-	
+  	
 	.show{
+    @include vert-margins;
     position: relative;
-		opacity: 1;
-    transition: all .5s;
     box-sizing: border-box;
-    height: 600px;
-    margin-bottom: 25px;
+    height: $large-tile-height;
   }
 
   .show img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    @include image-cover
   }
   
   .text{
@@ -37,22 +30,21 @@
     width: 100%;
     height: 100%;
     background: $dark;
-    color: $light;
-    font-weight: 900;
-    text-transform: uppercase;
 
     h3{
       position: absolute;
       top: 50px;
       left: 50px;
-      font-size: 175px;
+      @include light;
+      @include text-jumbo;      
     }
     
     h4{
-      font-size: 50px;
       position: absolute;
       bottom: 50px;
       right: 50px;
+      @include light;
+      @include text-block;
     }
   }
 

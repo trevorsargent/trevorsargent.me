@@ -2,9 +2,24 @@
 
   @include vert-margins;
   @include horz-margins;
- 
+  
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: $spacing;
+  
   img{
-		@include image-cover;
-	}
-	
+    @include image-cover;
+    height: $large-tile-height;
+    width: $large-tile-height;
+  }
+  
+  a{
+    @include highlight;
+    @include hover-dark;
+  }
+  
+  #bio{
+    @include text-paragraph;
+    @include vert-spacing;
+  }
 }

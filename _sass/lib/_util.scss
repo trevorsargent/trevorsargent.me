@@ -1,5 +1,9 @@
-@mixin heavy-caps{
+@mixin font{
   font-family: 'Source Sans Pro';
+}
+
+@mixin heavy-caps{
+  @include font;
   text-transform: uppercase;
   font-weight: 900;
 }

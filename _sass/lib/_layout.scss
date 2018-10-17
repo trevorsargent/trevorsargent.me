@@ -20,7 +20,7 @@
 
 @mixin vert-spacing{
     >:not(:last-child){
-        margin-bottom: $vertical-spacing;
+        margin-bottom: $spacing;
     }
 }
 

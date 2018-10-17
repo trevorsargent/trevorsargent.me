@@ -1,24 +1,34 @@
 .filter-bar{
   @include text-block;
   @include horz-margins;
-  height: 50px;
+  @include light;
+  @include text-small;
+  height: $double-spacing;
   background: $dark;
   display: flex;
   flex: row;
-  color: $light;
   overflow: hidden;
   
-  a:first-child{
-    width: 50px;
+
+
+  .filter-link{
+    @include transition(all .25s);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filter-link:first-child{
+    width: $double-spacing;
     background: $highlight;
   }
 
-  a:not(:first-child){
+  .filter-link:not(:first-child){
     flex: 1;
-
   }
 
-  a > div{
+  .filter-option{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,22 +38,13 @@
     border: 0px solid $highlight;
     @include transition(all .25s);
 
-   
-
     &:hover{
       border: 5px solid $highlight;
     }
   }
   
-  a{
-    @include transition(all .25s);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  a.hide{
+  .filter-link.hide{
     width: 0px;
     overflow: hidden;
   }

@@ -11,8 +11,24 @@
   font-size: $text-block;
 }
 
+@mixin text-small{
+  @include heavy-caps;
+  font-size: $text-small;
+}
+
+@mixin text-paragraph{
+  @include font;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: $text-small;
+}
+
 @mixin highlight{
   color: $highlight;
+}
+
+@mixin light{
+  color: $light;
 }
 
 @mixin hover-dark{

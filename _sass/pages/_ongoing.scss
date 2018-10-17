@@ -6,7 +6,8 @@
   @include horz-margins;
 
   a{
-    color: $highlight;
+    @include highlight;
+    @include hover-dark;
   }
   
   h1{

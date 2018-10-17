@@ -3,12 +3,17 @@ $lg: 1000px;
 
 $vertical-margin: 25px;
 $vertical-margin-sm: 25px;
-$vertical-spacing: 25px;
+$spacing: 25px;
+$double-spacing: $spacing * 2;
 $horizontal-margin: 25px;
 $horizontal-margin-sm: 25px;
 
+$large-tile-height: 600px;
+$small-tile-height: 400px;
+
 $text-jumbo: 150px;
 $text-block: 30px;
+$text-small: 20px;
 
 $transition-time: .25s;
 
