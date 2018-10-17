@@ -1,0 +1,91 @@
+.contact{
+    @include horz-margins;
+    h1{
+        @include text-jumbo;
+        @include highlight;
+    }
+
+    p{
+        @include text-paragraph;
+        @include vert-margins;
+    }
+
+    form{
+        @include vert-margins;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+    }
+    
+    textarea {
+        min-height: 200px;
+        grid-column: span 5;
+    }
+
+    p{
+        grid-column: span 5;
+    }
+
+    input, textarea{
+        border: 1px solid $dark;
+        padding-left: 5px;
+    }
+
+    textarea:focus, input:focus{
+        box-shadow: 0px 0px 5px $highlight;
+        outline: none;
+    }
+
+    input::placeholder{
+        color: transparentize($highlight, .8);
+    }
+
+    input[type=text]{
+        grid-column: span 2;   
+    }
+
+    input[type=email]{
+        grid-column: span 3;
+    }
+
+    input, label, textarea{
+        @include text-paragraph;
+        margin-bottom: 10px;
+    }
+
+    label{
+        margin-left: 5px;
+    }
+
+    .checkbox-group{
+        grid-column: span 5;
+    }
+
+    input[type=checkbox]{
+        padding: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        margin-bottom: -5px;
+        height: $spacing;
+        width: $spacing;
+        border: 2px $dark solid;
+        cursor: pointer;
+        @include transition(all $transition-time)
+    }
+
+    input[type=checkbox]:checked{
+        padding: 0;
+        border: 12px $highlight solid;
+        background: $highlight;
+    }
+
+    input[type=submit]{
+        grid-column: span 5;
+        background: $highlight;
+        border: none;
+        @include light;
+        @include text-paragraph;
+        cursor: pointer;
+    }
+
+}

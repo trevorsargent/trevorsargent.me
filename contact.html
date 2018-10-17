@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="contact">
+    <h1>Contact</h1>
+    <p>Greetings!</p>
+    <p>Thanks for wanting to reach out. <br> Feel free to fill out as much of the form below as you feel fits your
+        message! <br>
+        I'll get right back to you as fast as I can</p>
+    <form method="POST" action="https://formspree.io/trevor.a.sargent@gmail.com">
+        <p>Firstly, who are you?</p>
+        <input name="Name" placeholder="Name" type="text">
+
+        <p>and what's a good way to get in contact with you?</p>
+        <input type="email" name="_replyto" placeholder="Your email" />
+        <input name="phone number" placeholder="Phone Number" type="tel" id="phone number">
+
+        <p>What's the project?</p>
+        <input name="_subject" placeholder="Project Name" type="text">
+        <input name="Company Name" placeholder="Company Name" type="text">
+        <input name="Venue" placeholder="Venue" type="text">
+        <input name="Date" placeholder="MM/DD/YYYY" type="date">
+
+        <p>and what might you need me for?</p>
+        <div class="checkbox-group"><input type="checkbox" name="lighting" id="lighting"><label for="">Lighting</label></div>
+        <div class="checkbox-group"><input type="checkbox" name="scenery" id="scenery"><label for="">Scenery</label></div>
+        <div class="checkbox-group"><input type="checkbox" name="projections" id="projections"><label for="">Projections</label></div>
+        <div class="checkbox-group"><input type="checkbox" name="sound" id="sound"><label for="">Sound</label></div>
+        <div class="checkbox-group"><input type="checkbox" name="other" id="other"><label for="">Something Else</label></div>
+        <p>Anything else?</p>
+        <textarea name="message" id="message"></textarea>
+        <input type="hidden" name="_next" value="https://www.trevorsargent.me/contact-thanks" />
+        <input type="submit">
+
+
+
+
+    </form>
+</div>
