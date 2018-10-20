@@ -5,7 +5,6 @@ by: "Georgina Escobar"
 tags: [lighting]
 theatre: "Milagro Theatre"
 director: "Georgina Escobar"
-scenery: "Emily Wilkin"
+scenic: "Emily Wilkin"
 sound: "John Epperson"
-published: false
 ---
