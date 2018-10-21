@@ -6,11 +6,21 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: $spacing;
+
+  @include breakpoint(sm){
+    grid-template-columns: 1fr;
+  }
   
   img{
     @include image-cover;
-    height: $large-tile-height;
-    width: $large-tile-height;
+    height: $large-tile;
+    width: $large-tile;
+
+    @include breakpoint(sm){
+      width: 100%;
+      height:95vw;
+    }
+
   }
   
   a{

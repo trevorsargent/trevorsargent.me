@@ -1,6 +1,29 @@
-<nav>
+<nav id="nav">
   <div class="links">
     <a href="/">Home</a>
     {% include nav-links.html %}
   </div>
 </nav>
+<div id="toggle">+</div>
+
+<script>
+  var isOpen = false;
+  var toggle = document.getElementById('toggle');
+  var nav = document.getElementById('nav')
+
+  function updateNav() {
+    if (isOpen) {
+      nav.classList.add('open')
+    } else {
+      nav.classList.remove('open')
+    }
+  }
+
+  toggle.addEventListener('click', function () {
+    isOpen = !isOpen;
+    updateNav();
+  })
+
+
+  updateNav();
+</script>

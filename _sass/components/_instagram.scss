@@ -5,7 +5,7 @@
 	
 	grid-template-columns: 1fr 1fr 1fr;
 
-	@media(max-width: $med){
+	@media(max-width: $md){
     grid-template-rows: repeat(2, 55vw);
     grid-template-columns: 1fr 1fr;
 	}

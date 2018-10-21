@@ -4,11 +4,11 @@
   @include light;
   @include text-small;
   height: $double-spacing;
+
   background: $dark;
   display: flex;
   flex: row;
   overflow: hidden;
-  
 
 
   .filter-link{
@@ -51,6 +51,25 @@
 
   .selected{
     background: $highlight;
+  }
+
+  @include breakpoint(sm){
+    padding: 0;
+    flex-direction: column;
+    height: auto;
+    .filter-link{
+      height: $spacing;
+    }
+    .filter-option:hover{
+      border: none;
+    }
+    .filter-link:first-child{
+      width: unset;
+      flex-grow: 1;
+    }
+    .filter-link.hide{
+      height: 0px;
+    }
   }
 
 }

@@ -3,25 +3,29 @@
 @mixin vert-margins{
   margin-top: $vertical-margin ;
   margin-bottom: $vertical-margin;
-  @media(max-width: $med){
-    margin-top: $vertical-margin-sm;
-    margin-bottom: $vertical-margin-sm;
+  @include breakpoint(md){
+    margin-top: $vertical-margin/$md-ratio;
+    margin-bottom: $vertical-margin/$md-ratio;
   }
 }
 
 @mixin horz-margins{
   padding-left: $horizontal-margin;
   padding-right: $horizontal-margin;
-  @media(max-width: $med){
-    padding-left: $horizontal-margin-sm;
-    padding-right: $horizontal-margin-sm;
+  @include breakpoint(md){
+    padding-left: $horizontal-margin/$md-ratio;
+    padding-right: $horizontal-margin/$md-ratio;
   }
 }
 
 @mixin vert-spacing{
     >:not(:last-child){
         margin-bottom: $spacing;
+        @include breakpoint(md){
+          margin-bottom: $spacing / $md-ratio;
+        }
     }
+   
 }
 
 @mixin image-cover{

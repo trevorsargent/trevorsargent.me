@@ -17,7 +17,10 @@
 
   .cover-image{
     @include image-cover;
-    height: $large-tile-height;
+    height: $large-tile;
+    @include breakpoint(md){
+      height: $large-tile / $md-ratio;
+    }
   }
 
   .show-info{
@@ -46,7 +49,10 @@
 
     grid-template-columns: repeat(2, 1fr);
     grid-gap: $spacing;
-    grid-auto-rows: $small-tile-height;
+    grid-auto-rows: $small-tile;
+    @include breakpoint(sm){
+      grid-auto-rows: $small-tile-sm;
+    }
 
     a{
       height: 100%;
@@ -60,6 +66,10 @@
 
     .portrait{
       grid-row: span 2;
+    }
+
+    @include breakpoint(sm){
+      grid-template-columns: 1fr;
     }
 
   }

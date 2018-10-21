@@ -1,19 +1,26 @@
-$med: 650px;
-$lg: 1000px;
+$sm: 750px;
+$md: 850px;
+$lg: 1300px;
+
+$sm-ratio: 2.5;
+$md-ratio: 1.5;
+$lg-ratio: 1.25;
 
 $vertical-margin: 25px;
-$vertical-margin-sm: 25px;
 $spacing: 25px;
 $double-spacing: $spacing * 2;
 $horizontal-margin: 25px;
-$horizontal-margin-sm: 25px;
 
-$large-tile-height: 600px;
-$small-tile-height: 400px;
+$large-tile: 600px;
+$small-tile: 400px;
+$small-tile-sm: 200px;
 
 $text-jumbo: 150px;
 $text-block: 30px;
 $text-small: 20px;
+$text-small-sm: 14px;
+
+$text-block-sm: 20px;
 
 $transition-time: .25s;
 

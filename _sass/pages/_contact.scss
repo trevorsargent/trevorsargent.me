@@ -20,10 +20,12 @@
     textarea {
         min-height: 200px;
         grid-column: span 5;
+  
     }
 
     p{
         grid-column: span 5;
+
     }
 
     input, textarea{
@@ -41,16 +43,25 @@
     }
 
     input[type=text]{
-        grid-column: span 2;   
+        grid-column: span 2;  
+        @include breakpoint(sm){
+          grid-column: span 5;
+        } 
     }
 
     input[type=email]{
         grid-column: span 3;
+         @include breakpoint(sm){
+          grid-column: span 5;
+        } 
     }
 
     input, label, textarea{
         @include text-paragraph;
         margin-bottom: 10px;
+         @include breakpoint(sm){
+          grid-column: span 5;
+        } 
     }
 
     label{
@@ -87,5 +98,7 @@
         @include text-paragraph;
         cursor: pointer;
     }
+
+   
 
 }

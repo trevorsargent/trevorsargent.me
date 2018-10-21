@@ -18,11 +18,51 @@ nav{
       @include hover-dark;
     }
   }
+
 }
 
-nav:not(:hover){
-  max-height:25px;
-  .links{
-    opacity: 0;
+#toggle{
+  display: none;
+}
+
+
+
+@media (min-width: $sm+1){
+  nav:not(:hover){
+    max-height:25px;
+    .links{
+      opacity: 0;
+    }
+  }
+}
+
+
+
+@include breakpoint(sm){
+  #toggle{
+    display: block;
+    @include text-jumbo;
+    @include light;
+    text-align: center;
+    cursor: pointer;
+    background: $highlight;
+    margin-bottom: $spacing;
+  }
+
+  nav{
+    padding: 0;
+    width: 100%;
+    max-height: 0px;
+    a{
+      display: block;
+    }
+    .links{
+      @include horz-margins;
+      @include vert-margins;
+    }
+  }
+
+  nav.open{
+    max-height: 1000px;
   }
 }

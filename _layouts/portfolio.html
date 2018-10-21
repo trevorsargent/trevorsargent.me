@@ -1,5 +1,5 @@
---- 
-layout: default 
+---
+layout: default
 ---
 
 <div class="content portfolio">
@@ -9,11 +9,11 @@ layout: default
 
   <a href="{{show.url}}">
     <div class="show {{show.tags | join: ' '}}">
-    <div class="text">
-      <h4>{{show.theatre}}</h4>
-      <h3>{{show.title}}</h3>
-    </div>
-    <img src="/assets/posts/{{show.slug}}/cover.jpg" alt="">
+      <img src="/assets/posts/{{show.slug}}/cover.jpg" alt="">
+      <div class="text">
+        <h3>{{show.title}}</h3>
+        <h4>{{show.theatre}}</h4>
+      </div>
     </div>
   </a>
 
@@ -22,4 +22,3 @@ layout: default
 </div>
 
 {%include filter-bar.html %}
-

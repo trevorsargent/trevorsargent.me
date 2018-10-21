@@ -8,6 +8,9 @@
   a{
     @include highlight;
     @include hover-dark;
+    @include breakpoint(sm){
+      display: block;
+    }
   }
   
   h1{
