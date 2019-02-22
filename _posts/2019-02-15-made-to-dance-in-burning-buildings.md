@@ -5,6 +5,7 @@ by: "Anya Pearson"
 tags: [lighting]
 theatre: "Shaking The Tree Theatre"
 director: "Jamie Rea"
-scenery: "Jenny Ampersand"
-costimes: "Jenny Ampersand"
+scenic: "Jenny Ampersand"
+costumes: "Jenny Ampersand"
+photos: "Gary Norman"
 ---

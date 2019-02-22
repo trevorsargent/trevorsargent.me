@@ -6,4 +6,5 @@ tags: [lighting, scenery]
 theatre: "Theatre Vertigo"
 director: "Tamara Carroll"
 sound: "Cameron McFee"
+photos: "Scotty Fisher"
 ---
